@@ -6,14 +6,14 @@ import ServiceCard from "@/components/ServiceCard";
 export const metadata = { title: "Services", description: "Custom business apps, customer applications, enterprise systems, and future-ready software." };
 
 const services = [
-  { icon: CreditCard, title: "Business Apps", description: "Make everyday operations easier to manage with tools shaped around the way your teams already work.", tags: ["Billing", "Expenses", "Leave management"] },
-  { icon: ShoppingBag, title: "Customer Apps", description: "Give customers clear, useful digital experiences that make it easier to discover, book, and connect.", tags: ["E-commerce", "Booking", "Chatbots"] },
-  { icon: Building2, title: "Enterprise Software", description: "Bring important workflows into one dependable system with room to grow across teams and locations.", tags: ["ERP", "Inventory", "HR systems"] },
-  { icon: Bot, title: "Future Innovations", description: "Explore emerging tools carefully and turn promising technology into practical business value.", tags: ["AI dashboards", "Cloud tools", "IoT"] },
-  { icon: CalendarDays, title: "Workflow automation", description: "Connect routine steps, reduce handoffs, and give people more time for focused work.", tags: ["Approvals", "Notifications", "Integrations"] },
-  { icon: Database, title: "Data platforms", description: "Make business information easier to organize, understand, and put to work.", tags: ["Reporting", "Analytics", "Data systems"] },
-  { icon: Cloud, title: "Cloud & modernization", description: "Improve the foundations under your software with secure, maintainable cloud solutions.", tags: ["Cloud migration", "APIs", "Modernization"] },
-  { icon: Boxes, title: "Product engineering", description: "Move from concept to a polished, production-ready application with a collaborative build team.", tags: ["Prototypes", "Web apps", "Mobile-ready"] },
+  { icon: "CreditCard", title: "Business Apps", description: "Make everyday operations easier to manage with tools shaped around the way your teams already work.", tags: ["Billing", "Expenses", "Leave management"] },
+  { icon: "ShoppingBag", title: "Customer Apps", description: "Give customers clear, useful digital experiences that make it easier to discover, book, and connect.", tags: ["E-commerce", "Booking", "Chatbots"] },
+  { icon: "Building2", title: "Enterprise Software", description: "Bring important workflows into one dependable system with room to grow across teams and locations.", tags: ["ERP", "Inventory", "HR systems"] },
+  { icon: "Bot", title: "Future Innovations", description: "Explore emerging tools carefully and turn promising technology into practical business value.", tags: ["AI dashboards", "Cloud tools", "IoT"] },
+  { icon: "CalendarDays", title: "Workflow automation", description: "Connect routine steps, reduce handoffs, and give people more time for focused work.", tags: ["Approvals", "Notifications", "Integrations"] },
+  { icon: "Database", title: "Data platforms", description: "Make business information easier to organize, understand, and put to work.", tags: ["Reporting", "Analytics", "Data systems"] },
+  { icon: "Cloud", title: "Cloud & modernization", description: "Improve the foundations under your software with secure, maintainable cloud solutions.", tags: ["Cloud migration", "APIs", "Modernization"] },
+  { icon: "Boxes", title: "Product engineering", description: "Move from concept to a polished, production-ready application with a collaborative build team.", tags: ["Prototypes", "Web apps", "Mobile-ready"] },
 ];
 
 export default function ServicesPage() {

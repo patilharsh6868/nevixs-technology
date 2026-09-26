@@ -5,10 +5,10 @@ import Reveal from "@/components/Reveal";
 import ServiceCard from "@/components/ServiceCard";
 
 const services = [
-  { icon: Boxes, title: "Business apps", description: "Bring everyday operations into one clear, connected workspace.", tags: ["Billing", "Expenses", "Leave"] },
-  { icon: Code2, title: "Customer apps", description: "Create useful digital experiences that keep customers coming back.", tags: ["Commerce", "Booking", "Support"] },
-  { icon: ShieldCheck, title: "Enterprise software", description: "Connect teams and processes with software built to scale.", tags: ["ERP", "Inventory", "HR"] },
-  { icon: Sparkles, title: "Future innovations", description: "Explore practical new capabilities with emerging technology.", tags: ["AI", "Cloud", "IoT"] },
+  { icon: "Boxes", title: "Business apps", description: "Bring everyday operations into one clear, connected workspace.", tags: ["Billing", "Expenses", "Leave"] },
+  { icon: "Code2", title: "Customer apps", description: "Create useful digital experiences that keep customers coming back.", tags: ["Commerce", "Booking", "Support"] },
+  { icon: "ShieldCheck", title: "Enterprise software", description: "Connect teams and processes with software built to scale.", tags: ["ERP", "Inventory", "HR"] },
+  { icon: "Sparkles", title: "Future innovations", description: "Explore practical new capabilities with emerging technology.", tags: ["AI", "Cloud", "IoT"] },
 ];
 
 export default function HomePage() {

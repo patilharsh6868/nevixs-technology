@@ -6,4 +6,4 @@ const compat = new FlatCompat({
   baseDirectory: dirname(fileURLToPath(import.meta.url)),
 });
 
-export default [...compat.extends("next/core-web-vitals", "next/next").map((config) => config)];
+export default [...compat.extends("next/core-web-vitals").map((config) => config)];
