@@ -1,5 +1,7 @@
 const siteUrl = "https://nevixs.com";
 
+export const dynamic = "force-static";
+
 export default function sitemap() {
   const routes = ["", "/about", "/services", "/portfolio", "/blog", "/contact"];
 
