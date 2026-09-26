@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const links = [
   ["About", "/about"],
@@ -34,10 +35,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="container nav-inner">
-        <Link className="brand" href="/" aria-label="Nevixs Technology home">
-          <span className="brand-mark">N</span>
-          <span>Nevixs<small>TECHNOLOGY</small></span>
-        </Link>
+        <Logo />
         <nav className={`nav-links${menuOpen ? " open" : ""}`} aria-label="Main navigation">
           {links.map(([label, href]) => (
             <Link key={href} className={pathname === href ? "active" : ""} href={href}>{label}</Link>

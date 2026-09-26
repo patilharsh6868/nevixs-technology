@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -7,10 +8,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div>
-            <Link className="brand" href="/">
-              <span className="brand-mark">N</span>
-              <span>Nevixs<small>TECHNOLOGY</small></span>
-            </Link>
+            <Logo light />
             <p className="footer-note">Thoughtful software for the way your business works today, and where it wants to go next.</p>
           </div>
           <div className="footer-links">
