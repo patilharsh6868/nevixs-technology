@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="footer-group"><strong>Connect</strong><Link href="/contact">Start a project <ArrowUpRight size={12} /></Link><a href="https://www.instagram.com/nevixstechnology/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={12} /></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={12} /></a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={12} /></a></div>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Nevixs Technology</span><span>Chinchwad, Maharashtra, India</span><span>Made for what&apos;s next.</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} Nevixs Technology</span><span>Pune, Maharashtra, India</span><span>Made for what&apos;s next.</span></div>
       </div>
     </footer>
   );

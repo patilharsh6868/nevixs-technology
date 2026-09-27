@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
                 logo: "https://nevixs.com/nevixs-mark.svg",
                 email: "nevixstechnology@gmail.com",
                 sameAs: ["https://www.instagram.com/nevixstechnology/"],
-                address: { "@type": "PostalAddress", addressLocality: "Chinchwad", addressRegion: "Maharashtra", addressCountry: "IN" },
+                address: { "@type": "PostalAddress", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
               },
               {
                 "@type": "WebSite",
