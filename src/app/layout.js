@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 export const metadata = {
   metadataBase: new URL("https://nevixs.com"),
   title: {
-    default: "Nevixs Technology | Building Future-Ready Apps & Software",
+    default: "Nevixs Technology | ERP & Custom Business Software",
     template: "%s | Nevixs Technology",
   },
-  description: "Custom applications and thoughtful software solutions for businesses ready to move forward.",
+  description: "Nevixs Technology builds ERP platforms, custom business applications, and practical software solutions for growing businesses.",
   openGraph: {
     title: "Nevixs Technology",
-    description: "Custom solutions for businesses, powered by innovation.",
+    description: "ERP platforms and custom business software from Nevixs Technology.",
     url: "https://nevixs.com",
     siteName: "Nevixs Technology",
     type: "website",
@@ -25,6 +25,27 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://nevixs.com/#organization",
+                name: "Nevixs Technology",
+                url: "https://nevixs.com",
+                logo: "https://nevixs.com/nevixs-mark.svg",
+                email: "nevixstechnology@gmail.com",
+                address: { "@type": "PostalAddress", addressLocality: "Chinchwad", addressRegion: "Maharashtra", addressCountry: "IN" },
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://nevixs.com/#website",
+                name: "Nevixs Technology",
+                url: "https://nevixs.com",
+                publisher: { "@id": "https://nevixs.com/#organization" },
+              },
+            ],
+          }) }} />
       </body>
     </html>
   );
