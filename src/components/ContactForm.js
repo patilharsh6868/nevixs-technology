@@ -37,6 +37,7 @@ export default function ContactForm() {
       <input type="hidden" name="_subject" value="New Nevixs Technology enquiry" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_autoresponse" value="Thank you for contacting Nevixs Technology. We received your enquiry and will get back to you soon.\n\nNevixs Technology\nPune, Maharashtra, India" />
       <button className="button button-dark" type="submit" disabled={sending}>{sending ? "Sending..." : "Send enquiry"} <ArrowUpRight size={16} /></button>
       {submitted && <p className="form-success" role="status">Thanks for reaching out. Your enquiry has been sent to the Nevixs team.</p>}
       {error && <p className="form-error" role="alert">We couldn&apos;t send that just now. Please try again or email nevixstechnology@gmail.com.</p>}
