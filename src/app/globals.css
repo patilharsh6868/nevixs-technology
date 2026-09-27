@@ -138,6 +138,10 @@ button { color: inherit; }
 
 .project-card { overflow: hidden; border: 1px solid var(--line); background: white; }
 .project-art { position: relative; display: grid; min-height: 270px; place-items: center; overflow: hidden; background: #e9f2ed; }
+.concept-art { min-height: 340px; padding: 20px; background: #e5f1ee; }
+.concept-art img { display: block; width: 100%; height: auto; border: 1px solid rgba(10,37,64,.12); box-shadow: 0 18px 40px rgba(10,37,64,.16); transform: rotate(-1.5deg); transition: transform .35s ease; }
+.project-card:hover .concept-art img { transform: rotate(0) translateY(-4px); }
+.concept-label { position: absolute; right: 18px; bottom: 16px; padding: 7px 9px; background: var(--surface-dark); color: #d8fff5; font: 9px 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
 .project-art.invoice { background: #dcece7; }
 .project-art.leave { background: #e9e8d8; }
 .project-art h3 { position: absolute; left: 20px; top: 15px; z-index: 2; margin: 0; font: 10px 'DM Mono', monospace; text-transform: uppercase; }
