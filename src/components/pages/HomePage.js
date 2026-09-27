@@ -3,6 +3,7 @@ import { ArrowRight, Boxes, CircleCheck, Code2, Lightbulb, MoveUpRight, ShieldCh
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import ServiceCard from "@/components/ServiceCard";
+import ComingSoon from "@/components/ComingSoon";
 
 const services = [
   { icon: "Boxes", title: "Business apps", description: "Bring everyday operations into one clear, connected workspace.", tags: ["Billing", "Expenses", "Leave"] },
@@ -21,6 +22,7 @@ export default function HomePage() {
         <div style={{ marginTop: 26 }}><Link className="button button-outline" href="/services">Explore all services <ArrowRight size={15} /></Link></div>
       </div>
     </section>
+    <ComingSoon />
     <section className="section" style={{ paddingTop: 20 }}>
       <div className="container two-col">
         <Reveal><span className="eyebrow">Built with intention</span><h2 className="section-title">Good technology should feel like a head start.</h2><p className="body-copy">Every business has its own rhythm. We listen first, then design and build the right tools to remove friction and make room for what comes next.</p><Link className="button button-dark" href="/about">Get to know us <MoveUpRight size={15} /></Link></Reveal>
