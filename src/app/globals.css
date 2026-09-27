@@ -69,6 +69,22 @@ button { color: inherit; }
 .orbit.one { width: 440px; height: 300px; }
 .orbit.two { width: 530px; height: 365px; }
 .dashboard { position: relative; z-index: 2; width: min(100%, 420px); padding: 19px; background: #f8fbf9; color: var(--surface-dark); border: 1px solid rgba(255,255,255,.6); box-shadow: 0 30px 90px rgba(2,18,29,.35); transform: rotate(2deg); }
+.erp-preview { display: flex; gap: 14px; padding: 0; overflow: hidden; }
+.erp-sidebar { display: flex; width: 82px; flex-shrink: 0; flex-direction: column; gap: 13px; padding: 17px 10px; background: var(--surface-dark); color: #a8c3c9; font: 8px 'DM Mono', monospace; }
+.erp-sidebar span { display: flex; align-items: center; gap: 5px; }
+.erp-mini-mark { display: grid; width: 25px; height: 25px; margin-bottom: 7px; place-items: center; border-radius: 7px 2px 7px 2px; background: var(--teal); color: var(--surface-dark); font: 800 14px 'Manrope', sans-serif; }
+.erp-side-active { color: #fff; }
+.erp-main { min-width: 0; flex: 1; padding: 17px 17px 16px 0; }
+.erp-welcome { display: flex; align-items: end; justify-content: space-between; margin: 10px 0 14px; }
+.erp-welcome .dash-label { margin: 0 0 3px; }
+.erp-welcome strong { font-size: 12px; }
+.erp-avatar { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; background: #d8f5ed; color: #007c6a; font: 8px 'DM Mono', monospace; }
+.erp-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.erp-metrics div { padding: 7px; background: #eef6f3; }
+.erp-metrics span, .erp-metrics small { display: block; color: #718087; font: 7px 'DM Mono', monospace; }
+.erp-metrics strong { display: block; margin: 4px 0 2px; font-size: 12px; letter-spacing: -.04em; }
+.erp-metrics small { color: #008f78; }
+.erp-chart-head { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; font-size: 9px; font-weight: 700; }
 .dash-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid #e5edeb; font-size: 11px; font-weight: 700; }
 .dash-status { display: inline-flex; align-items: center; gap: 5px; color: #008f78; font: 9px 'DM Mono', monospace; }
 .dash-status::before { content: ''; width: 5px; height: 5px; background: var(--teal); border-radius: 50%; }
@@ -152,6 +168,7 @@ button { color: inherit; }
 .field input:focus, .field textarea:focus { border-color: #00a98e; box-shadow: 0 0 0 3px rgba(0,201,167,.12); }
 .field textarea { min-height: 140px; resize: vertical; }
 .form-success { margin: 16px 0 0; padding: 12px; background: #e3f8f0; color: #006954; font-size: 13px; }
+.form-error { margin: 16px 0 0; padding: 12px; background: #fff0ed; color: #a23a2d; font-size: 13px; }
 
 .blog-card { padding: 23px; background: white; border: 1px solid var(--line); transition: border-color .2s ease, transform .2s ease; }
 .blog-card:hover { transform: translateY(-4px); border-color: var(--teal); }
@@ -200,6 +217,8 @@ button { color: inherit; }
 .dark-mode .field input, .dark-mode .field textarea { background: #0b1d2a; color: var(--ink); border-color: var(--line); }
 .dark-mode .icon-box { background: #16443f; color: #74ead0; }
 .dark-mode .stat-strip { border-color: var(--line); }
+.dark-mode .erp-metrics div { background: #e3f0ed; }
+.dark-mode .form-error { background: #3a2525; color: #ffc2b9; }
 .dark-mode .eyebrow { color: #8fc9c0; }
 .dark-mode .blog-meta { color: #8fb0ac; }
 .dark-mode .field label { color: #9fb6b9; }

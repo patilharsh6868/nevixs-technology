@@ -5,11 +5,26 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setSubmitted(true);
-    event.currentTarget.reset();
+    setSending(true);
+    setError(false);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/nevixstechnology@gmail.com", { method: "POST", headers: { Accept: "application/json" }, body: formData });
+      if (!response.ok) throw new Error("Unable to send enquiry");
+      setSubmitted(true);
+      form.reset();
+    } catch (_error) {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -19,8 +34,12 @@ export default function ContactForm() {
         <div className="field"><label htmlFor="email">Email address</label><input id="email" name="email" type="email" autoComplete="email" placeholder="you@company.com" required /></div>
         <div className="field full"><label htmlFor="message">What are you building?</label><textarea id="message" name="message" placeholder="A little about your project, goals, or the problem you want to solve..." required /></div>
       </div>
-      <button className="button button-dark" type="submit">Send enquiry <ArrowUpRight size={16} /></button>
-      {submitted && <p className="form-success" role="status">Thanks for reaching out. This demo form is ready to connect to your inbox or API.</p>}
+      <input type="hidden" name="_subject" value="New Nevixs Technology enquiry" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <button className="button button-dark" type="submit" disabled={sending}>{sending ? "Sending..." : "Send enquiry"} <ArrowUpRight size={16} /></button>
+      {submitted && <p className="form-success" role="status">Thanks for reaching out. Your enquiry has been sent to the Nevixs team.</p>}
+      {error && <p className="form-error" role="alert">We couldn&apos;t send that just now. Please try again or email nevixstechnology@gmail.com.</p>}
     </form>
   );
 }
