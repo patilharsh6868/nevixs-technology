@@ -17,7 +17,9 @@ export default function ContactForm() {
 
     try {
       const response = await fetch("https://formsubmit.co/ajax/nevixstechnology@gmail.com", { method: "POST", headers: { Accept: "application/json" }, body: formData });
-      if (!response.ok) throw new Error("Unable to send enquiry");
+      const data = await response.json().catch(() => null);
+      const success = data?.success === true || data?.success === "true";
+      if (!response.ok || !success) throw new Error(data?.message || "Unable to send enquiry");
       setSubmitted(true);
       form.reset();
     } catch (_error) {
