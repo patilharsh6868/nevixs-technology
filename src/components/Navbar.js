@@ -8,6 +8,7 @@ import Logo from "@/components/Logo";
 
 const links = [
   ["About", "/about"],
+  ["ERP", "/erp"],
   ["Services", "/services"],
   ["Work", "/portfolio"],
   ["Insights", "/blog"],
@@ -38,7 +39,7 @@ export default function Navbar() {
         <Logo />
         <nav className={`nav-links${menuOpen ? " open" : ""}`} aria-label="Main navigation">
           {links.map(([label, href]) => (
-            <Link key={href} className={pathname === href ? "active" : ""} href={href}>{label}</Link>
+            <Link key={href} className={pathname === href ? "active" : ""} aria-current={pathname === href ? "page" : undefined} href={href}>{label}</Link>
           ))}
         </nav>
         <div className="nav-actions">

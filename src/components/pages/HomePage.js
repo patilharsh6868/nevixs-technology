@@ -7,8 +7,8 @@ import ServiceCard from "@/components/ServiceCard";
 import ComingSoon from "@/components/ComingSoon";
 
 const concepts = [
-  { title: "Nevixs Core", category: "Business operations", image: "/nevixs-core-demo.svg", alt: "Nevixs Core concept dashboard showing sales, inventory, and business reports" },
-  { title: "Signal", category: "Customer intelligence", image: "/nevixs-signal-demo.svg", alt: "Signal concept dashboard showing customer engagement and retention metrics" },
+  { title: "Nevixs Core", category: "Multi-business ERP concept", image: "/nevixs-core-demo.svg", alt: "Nevixs Core ERP concept showing sales, inventory, and business reports" },
+  { title: "Signal", category: "Customer intelligence concept", image: "/nevixs-signal-demo.svg", alt: "Signal concept dashboard showing customer engagement and retention metrics" },
 ];
 
 const services = [
@@ -23,7 +23,7 @@ export default function HomePage() {
     <Hero />
     <section className="section">
       <div className="container">
-        <Reveal className="section-heading"><span className="eyebrow">The Nevixs ERP platform</span><h2 className="section-title">Run multiple businesses with a clearer view of the work.</h2><p className="body-copy" style={{ maxWidth: 580 }}>Start with connected business operations, then bring in the tools and workflows your teams need as you grow.</p></Reveal>
+        <Reveal className="section-heading"><span className="eyebrow">What we do</span><h2 className="section-title">Software that makes work feel simpler.</h2><p className="body-copy" style={{ maxWidth: 580 }}>We turn ambitious ideas into dependable digital products, built around the people and processes that matter.</p></Reveal>
         <div className="services-grid">{services.map((service, index) => <ServiceCard key={service.title} {...service} index={index} />)}</div>
         <div style={{ marginTop: 26 }}><Link className="button button-outline" href="/services">Explore all services <ArrowRight size={15} /></Link></div>
       </div>
@@ -32,8 +32,8 @@ export default function HomePage() {
       <div className="container">
         <Reveal className="section-heading">
           <span className="eyebrow">Selected concepts</span>
-          <h2 className="section-title">Designed to bring business operations together.</h2>
-          <p className="body-copy" style={{ maxWidth: 580 }}>Explore early Nevixs product concepts for clearer operations and customer insight. These are product explorations—not finished client projects.</p>
+          <h2 className="section-title">A glimpse of what thoughtful software can do.</h2>
+          <p className="body-copy" style={{ maxWidth: 580 }}>These early product concepts explore ways to make business work clearer. They are explorations—not finished client projects.</p>
         </Reveal>
         <div className="project-grid home-project-grid">
           {concepts.map((concept, index) => (
@@ -41,7 +41,7 @@ export default function HomePage() {
               <Link href="/portfolio" className="project-card home-project-card">
                 <div className="project-art concept-art">
                   <Image src={concept.image} alt={concept.alt} width={1200} height={760} />
-                  <span className="concept-label">Concept demo</span>
+                  <span className="concept-label">Concept demo · sample data</span>
                 </div>
                 <div className="project-info">
                   <div><h3>{concept.title}</h3><p>{concept.category}</p></div>
@@ -57,7 +57,7 @@ export default function HomePage() {
     <ComingSoon />
     <section className="section approach-section">
       <div className="container">
-        <Reveal className="section-heading"><span className="eyebrow">Built around your operations</span><h2 className="section-title">A practical path to a better-run business.</h2><p className="body-copy" style={{ maxWidth: 580 }}>We learn how your businesses work today, then shape a platform around the processes and priorities that matter most.</p></Reveal>
+        <Reveal className="section-heading"><span className="eyebrow">Built with intention</span><h2 className="section-title">A clear path from idea to useful software.</h2><p className="body-copy" style={{ maxWidth: 580 }}>We listen first, then shape practical technology around the people and processes that matter.</p></Reveal>
         <div className="approach-grid">
           <Reveal className="approach-card"><span>01 / Listen</span><h3>Understand the real need.</h3><p>We start with your goals and current workflows to find what is worth solving first.</p></Reveal>
           <Reveal className="approach-card" delay={.08}><span>02 / Shape</span><h3>Plan a useful solution.</h3><p>We map the experience and key features around the people who will use the software.</p></Reveal>

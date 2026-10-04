@@ -20,12 +20,13 @@ Visit `http://localhost:3000`.
 
 - `/` Home
 - `/about` Company, mission, vision, and values
-- `/services` Business, customer, enterprise, and innovation solutions
-- `/portfolio` Sample invoice and leave-management prototypes
-- `/contact` Enquiry form, social links, and location
-- `/blog` Insights placeholder
+- `/erp` Early-stage multi-business ERP information
+- `/services` Business apps, customer applications, and software services
+- `/portfolio` Early product concepts and demos (not finished client projects)
+- `/contact` Enquiry form, email, and location
+- `/blog` Insights and upcoming article previews
 
-The team profiles and portfolio screens are illustrative placeholders and should be replaced with approved company details and project screenshots.
+Nevixs ERP is in an early stage. Product screens and figures are concepts with sample data, not a live product or customer results.
 
 ## Contact form delivery (Cloudflare Pages Function)
 

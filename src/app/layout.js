@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 export const metadata = {
   metadataBase: new URL("https://nevixs.com"),
   title: {
-    default: "Nevixs Technology | Multi-Business ERP",
+    default: "Nevixs Technology | ERP & Custom Business Software",
     template: "%s | Nevixs Technology",
   },
-  description: "Nevixs is developing an ERP platform to connect sales, inventory, purchases, and operations across multiple businesses.",
+  description: "Nevixs Technology builds custom business software and is developing an ERP platform for multi-business operations.",
   openGraph: {
     title: "Nevixs Technology",
-    description: "Nevixs is developing one connected ERP platform for managing multiple businesses.",
+    description: "Custom business software and a multi-business ERP platform from Nevixs Technology.",
     url: "https://nevixs.com",
     siteName: "Nevixs Technology",
     type: "website",
@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
         <Navbar />
         <main>{children}</main>

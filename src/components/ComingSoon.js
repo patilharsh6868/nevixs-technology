@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, BarChart3, Boxes, Calculator, CreditCard, ShoppingBag, ShoppingCart, Sparkles, Users } from "lucide-react";
+import { ArrowUpRight, BarChart3, Boxes, Building2, Calculator, CreditCard, ShoppingBag, ShoppingCart, Users } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 const features = [
@@ -10,7 +10,7 @@ const features = [
   { icon: BarChart3, label: "Reports & Insights" },
   { icon: CreditCard, label: "Payments" },
   { icon: ShoppingBag, label: "Purchases" },
-  { icon: Sparkles, label: "More features" },
+  { icon: Building2, label: "Multi-business view" },
 ];
 
 export default function ComingSoon() {
@@ -19,11 +19,11 @@ export default function ComingSoon() {
       <div className="container coming-soon">
         <Reveal className="coming-soon-copy">
           <span className="eyebrow">The Nevixs platform · Coming soon</span>
-          <h2 className="section-title">One ERP for <span>your multiple businesses.</span></h2>
-          <p className="body-copy">Keep sales, inventory, purchases, customers, suppliers, payments, expenses, and reports connected in one business platform.</p>
-          <p className="body-copy">Designed for owners and teams managing more than one business, brand, or operation—with a clearer view of the work happening across them.</p>
+          <h2 className="section-title">ERP for <span>multiple businesses.</span></h2>
+          <p className="body-copy">We&apos;re exploring a connected workspace for sales, inventory, purchases, customers, suppliers, payments, expenses, and reports.</p>
+          <p className="body-copy">The goal is to make day-to-day operations easier to follow for owners and teams managing more than one business.</p>
           <div className="coming-soon-badge"><span />Coming soon</div>
-          <div><Link className="button button-dark" href="/contact">Get notified at launch <ArrowUpRight size={15} /></Link></div>
+          <div><Link className="button button-dark" href="/contact">Talk to us about ERP <ArrowUpRight size={15} /></Link></div>
         </Reveal>
         <Reveal className="coming-soon-grid" delay={.1}>
           {features.map(({ icon: Icon, label }) => (

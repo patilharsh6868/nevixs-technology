@@ -1,15 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bot, Boxes, Building2, CalendarDays, Cloud, Code2, CreditCard, Database, ShoppingBag, ShieldCheck, Sparkles } from "lucide-react";
+import { BarChart3, Bot, Boxes, Building2, CalendarDays, Cloud, Code2, CreditCard, Database, ShoppingBag, ShoppingCart, ShieldCheck, Sparkles } from "lucide-react";
 
 const iconMap = {
   Boxes,
+  BarChart3,
   Code2,
   ShieldCheck,
   Sparkles,
   CreditCard,
   ShoppingBag,
+  ShoppingCart,
   Building2,
   Bot,
   CalendarDays,
