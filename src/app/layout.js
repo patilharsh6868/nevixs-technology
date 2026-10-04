@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 export const metadata = {
   metadataBase: new URL("https://nevixs.com"),
   title: {
-    default: "Nevixs Technology | ERP & Custom Business Software",
+    default: "Nevixs Technology | Multi-Business ERP",
     template: "%s | Nevixs Technology",
   },
-  description: "Nevixs Technology builds ERP platforms, custom business applications, and practical software solutions for growing businesses.",
+  description: "Nevixs is developing an ERP platform to connect sales, inventory, purchases, and operations across multiple businesses.",
   openGraph: {
     title: "Nevixs Technology",
-    description: "ERP platforms and custom business software from Nevixs Technology.",
+    description: "Nevixs is developing one connected ERP platform for managing multiple businesses.",
     url: "https://nevixs.com",
     siteName: "Nevixs Technology",
     type: "website",

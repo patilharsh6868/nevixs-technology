@@ -15,13 +15,13 @@ const features = [
 
 export default function ComingSoon() {
   return (
-    <section className="section coming-soon-section">
+    <section className="section coming-soon-section" id="erp-platform">
       <div className="container coming-soon">
         <Reveal className="coming-soon-copy">
-          <span className="eyebrow">Introducing</span>
-          <h2 className="section-title">NEVIXS <span>Complete Business ERP Platform</span></h2>
-          <p className="body-copy">Powerful. Simple. All-in-one. Manage your sales, inventory, purchases, customers, suppliers, payments, accounting, expenses and reports — all from one easy-to-use platform.</p>
-          <p className="body-copy">Whether you&apos;re a retailer, wholesaler, distributor, service business, or growing company, Nevixs is designed to bring your everyday business operations together.</p>
+          <span className="eyebrow">The Nevixs platform · Coming soon</span>
+          <h2 className="section-title">One ERP for <span>your multiple businesses.</span></h2>
+          <p className="body-copy">Keep sales, inventory, purchases, customers, suppliers, payments, expenses, and reports connected in one business platform.</p>
+          <p className="body-copy">Designed for owners and teams managing more than one business, brand, or operation—with a clearer view of the work happening across them.</p>
           <div className="coming-soon-badge"><span />Coming soon</div>
           <div><Link className="button button-dark" href="/contact">Get notified at launch <ArrowUpRight size={15} /></Link></div>
         </Reveal>
