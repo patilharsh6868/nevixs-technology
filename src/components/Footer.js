@@ -12,7 +12,7 @@ export default function Footer() {
             <p className="footer-note">Thoughtful software for the way your business works today, and where it wants to go next.</p>
           </div>
           <div className="footer-links">
-            <div className="footer-group"><strong>Explore</strong><Link href="/erp">ERP</Link><Link href="/about">About us</Link><Link href="/services">Services</Link><Link href="/portfolio">Our work</Link><Link href="/blog">Insights</Link></div>
+            <div className="footer-group"><strong>Explore</strong><Link href="/erp">ERP</Link><Link href="/about">About us</Link><Link href="/services">Services</Link><Link href="/blog">Insights</Link></div>
             <div className="footer-group"><strong>Connect</strong><Link href="/contact">Start a conversation <ArrowUpRight size={12} /></Link><a href="mailto:nevixstechnology@gmail.com">Email us <ArrowUpRight size={12} /></a><a href="https://www.instagram.com/nevixstechnology/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={12} /></a></div>
           </div>
         </div>

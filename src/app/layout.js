@@ -9,6 +9,11 @@ export const metadata = {
     template: "%s | Nevixs Technology",
   },
   description: "Nevixs Technology builds custom business software and is developing an ERP platform for multi-business operations.",
+  icons: {
+    icon: "/nevixs-mark.svg",
+    shortcut: "/nevixs-mark.svg",
+    apple: "/nevixs-mark.svg",
+  },
   openGraph: {
     title: "Nevixs Technology",
     description: "Custom business software and a multi-business ERP platform from Nevixs Technology.",

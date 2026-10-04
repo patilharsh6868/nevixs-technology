@@ -22,7 +22,6 @@ Visit `http://localhost:3000`.
 - `/about` Company, mission, vision, and values
 - `/erp` Early-stage multi-business ERP information
 - `/services` Business apps, customer applications, and software services
-- `/portfolio` Early product concepts and demos (not finished client projects)
 - `/contact` Enquiry form, email, and location
 - `/blog` Insights and upcoming article previews
 

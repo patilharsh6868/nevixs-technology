@@ -155,11 +155,6 @@ button { color: inherit; }
 .project-info { display: flex; justify-content: space-between; gap: 15px; align-items: center; padding: 17px 18px; }
 .project-info h3 { margin: 0; font-size: 15px; }
 .project-info p { margin: 5px 0 0; color: var(--muted); font: 9px 'DM Mono', monospace; text-transform: uppercase; }
-.home-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.home-project-card { display: block; height: 100%; color: var(--ink); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
-.home-project-card:hover { transform: translateY(-5px); border-color: var(--teal); box-shadow: 0 15px 35px rgba(10,37,64,.08); }
-.home-project-card:focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
-.home-project-card .project-info > svg { flex-shrink: 0; color: #008f78; }
 .testimonial { padding: 38px; background: var(--surface-dark); color: white; }
 .testimonial blockquote { max-width: 780px; margin: 20px 0 26px; font: 400 clamp(22px, 3.5vw, 36px)/1.32 var(--serif); }
 .testimonial cite { color: #a7c4c5; font: 10px 'DM Mono', monospace; text-transform: uppercase; font-style: normal; }
@@ -224,7 +219,6 @@ button { color: inherit; }
 .dark-mode .theme-toggle, .dark-mode .menu-toggle { color: var(--ink); border-color: var(--line); }
 .dark-mode .cta-band { background: #153d42; }
 .dark-mode .project-info { color: #e7f1ed; }
-.dark-mode .home-project-card .project-info > svg { color: #74ead0; }
 .dark-mode .approach-section { background: #132e3c; }
 .dark-mode .approach-card { background: #112a39; border-color: var(--line); }
 .dark-mode .field input, .dark-mode .field textarea { background: #0b1d2a; color: var(--ink); border-color: var(--line); }
@@ -269,7 +263,6 @@ button { color: inherit; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 260px; }
   .values-grid, .team-grid, .project-grid, .insights-grid, .approach-grid { grid-template-columns: 1fr; }
-  .home-project-grid { grid-template-columns: 1fr; }
   .coming-soon-grid { grid-template-columns: 1fr; }  .team-avatar { aspect-ratio: 1.65; }
   .stat-strip { grid-template-columns: repeat(3, 1fr); }
   .stat { padding-right: 8px; }
