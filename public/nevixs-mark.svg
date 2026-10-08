@@ -1,12 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">NEVIXS square brand mark</title>
+  <desc id="description">A connected, dimensional white and turquoise N inside a glowing turquoise outlined navy square, with no outer circle or lettering.</desc>
   <defs>
-    <linearGradient id="mark" x1="20" y1="17" x2="47" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#b9fff4"/>
+    <linearGradient id="outline" x1="64" y1="64" x2="448" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#31dcc0"/>
+      <stop offset="1" stop-color="#18b8d5"/>
     </linearGradient>
+    <linearGradient id="uprights" x1="140" y1="160" x2="366" y2="354" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#078d91"/>
+      <stop offset="0.35" stop-color="#2ce7cb"/>
+      <stop offset="0.7" stop-color="#15cbbd"/>
+      <stop offset="1" stop-color="#07949f"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="174" y1="154" x2="346" y2="362" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#f4fcff"/>
+      <stop offset="0.8" stop-color="#d9edf4"/>
+      <stop offset="1" stop-color="#a9cfde"/>
+    </linearGradient>
+    <radialGradient id="navy" cx="0.45" cy="0.35" r="0.8">
+      <stop stop-color="#08374e"/>
+      <stop offset="1" stop-color="#011522"/>
+    </radialGradient>
+    <filter id="frame-shadow" x="-12%" y="-12%" width="124%" height="130%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#00131f" flood-opacity="0.4"/>
+    </filter>
+    <filter id="edge-glow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="mark-shadow" x="-20%" y="-20%" width="140%" height="145%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#000d19" flood-opacity="0.75"/>
+    </filter>
   </defs>
-  <rect width="64" height="64" rx="12" fill="#06182d"/>
-  <rect x="7" y="7" width="50" height="50" rx="10" fill="none" stroke="#00e2cf" stroke-width="2"/>
-  <path d="M17 46V18h8l17 19V18h8v28h-8L25 27v19h-8Z" fill="url(#mark)"/>
-  <path d="M42 18h8L33 46h-8l17-28Z" fill="#00c9a7" opacity=".9"/>
+  <rect x="48" y="48" width="416" height="416" rx="86" fill="url(#navy)" filter="url(#frame-shadow)"/>
+  <rect x="48" y="48" width="416" height="416" rx="86" fill="none" stroke="url(#outline)" stroke-width="12" opacity="0.65" filter="url(#edge-glow)"/>
+  <rect x="48" y="48" width="416" height="416" rx="86" fill="none" stroke="url(#outline)" stroke-width="8"/>
+  <rect x="55" y="55" width="402" height="402" rx="79" fill="none" stroke="#a3fff0" stroke-width="1.5" opacity="0.3"/>
+  <g filter="url(#mark-shadow)">
+    <path d="M132 180 188 150Q199 148 206 163V328L132 370Z" fill="url(#uprights)"/>
+    <path d="M304 178 356 148V124Q356 118 362 118H398Q404 118 404 124V150Q404 156 398 156H372V336Q372 350 357 360L346 367Q328 379 310 355L304 348Z" fill="url(#uprights)"/>
+    <path d="M136 189V361M310 183 351 159M365 125H397" fill="none" stroke="#8effe9" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    <path d="M132 180 168 152Q190 138 208 158L365 316Q372 324 372 336Q372 350 357 360L346 367Q328 379 310 355Z" fill="url(#ribbon)"/>
+    <path d="M141 179 173 158Q189 148 202 164L354 322" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  </g>
 </svg>

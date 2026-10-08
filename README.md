@@ -39,6 +39,10 @@ Setup:
 
 The form includes a hidden honeypot field (`company`) and a 15s client-side timeout with a `mailto:` fallback if the request fails.
 
+ERP enquiry links use `/contact?topic=erp` to preselect the upcoming ERP option.
+The selected enquiry type is included in both the delivered email and the mailto fallback.
+Requests from older forms without an enquiry type are treated as general enquiries.
+
 ## Express API placeholder
 
 The `server/` folder is an unused placeholder and is not wired into the deployed site.

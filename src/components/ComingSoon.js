@@ -23,7 +23,7 @@ export default function ComingSoon() {
           <p className="body-copy">We&apos;re exploring a connected workspace for sales, inventory, purchases, customers, suppliers, payments, expenses, and reports.</p>
           <p className="body-copy">The goal is to make day-to-day operations easier to follow for owners and teams managing more than one business.</p>
           <div className="coming-soon-badge"><span />Coming soon</div>
-          <div><Link className="button button-dark" href="/contact">Talk to us about ERP <ArrowUpRight size={15} /></Link></div>
+          <div><Link className="button button-dark" href="/contact?topic=erp">Talk to us about ERP <ArrowUpRight size={15} /></Link></div>
         </Reveal>
         <Reveal className="coming-soon-grid" delay={.1}>
           {features.map(({ icon: Icon, label }) => (

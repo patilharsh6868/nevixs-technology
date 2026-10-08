@@ -37,11 +37,10 @@ button { color: inherit; }
 .navbar { position: sticky; z-index: 50; top: 0; height: 76px; background: rgba(245,248,246,.94); border-bottom: 1px solid rgba(10,37,64,.09); backdrop-filter: blur(16px); }
 .nav-inner { display: flex; height: 100%; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 18px; font-weight: 800; letter-spacing: -.04em; }
-.brand-mark { display: grid; width: 36px; aspect-ratio: 1; place-items: center; background: var(--surface-dark); color: #f5f8f6; border-radius: 9px 3px 9px 3px; box-shadow: 4px 4px 0 rgba(0,201,167,.32); }
-.brand-mark svg { width: 25px; height: 25px; }
+.brand-mark { display: grid; width: 42px; aspect-ratio: 1; place-items: center; flex-shrink: 0; }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .brand-name small { display: block; margin-top: 2px; font: 500 8px 'DM Mono', monospace; letter-spacing: .14em; color: var(--muted); }
 .brand-light { color: #fff; }
-.brand-light .brand-mark { background: #fff; color: var(--surface-dark); }
 .brand-light .brand-name small { color: #a7c4c5; }
 .nav-links { display: flex; align-items: center; gap: 30px; color: #475b67; font-size: 13px; font-weight: 600; }
 .nav-links a { transition: color .2s ease; }
@@ -169,8 +168,8 @@ button { color: inherit; }
 .field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 17px; }
 .field.full { grid-column: 1 / -1; }
 .field label { font: 10px 'DM Mono', monospace; text-transform: uppercase; color: #5a6d72; }
-.field input, .field textarea { width: 100%; border: 1px solid var(--line); background: #fbfcfb; padding: 13px; outline: none; color: var(--ink); font-size: 14px; }
-.field input:focus, .field textarea:focus { border-color: #00a98e; box-shadow: 0 0 0 3px rgba(0,201,167,.12); }
+.field input, .field textarea, .field select { width: 100%; border: 1px solid var(--line); background: #fbfcfb; padding: 13px; outline: none; color: var(--ink); font-size: 14px; }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: #00a98e; box-shadow: 0 0 0 3px rgba(0,201,167,.12); }
 .field textarea { min-height: 140px; resize: vertical; }
 .form-success { margin: 16px 0 0; padding: 12px; background: #e3f8f0; color: #006954; font-size: 13px; }
 .form-error { margin: 16px 0 0; padding: 12px; background: #fff0ed; color: #a23a2d; font-size: 13px; }
@@ -202,7 +201,6 @@ button { color: inherit; }
 .dark-mode .coming-soon-chip svg { color: #74ead0; }
 .footer { padding: 55px 0 24px; background: var(--surface-dark); color: #f4f8f7; }
 .footer-top { display: flex; justify-content: space-between; gap: 50px; padding-bottom: 40px; }
-.footer .brand-mark { background: white; color: var(--surface-dark); }
 .footer-note { max-width: 330px; color: #adc0c4; font-size: 13px; line-height: 1.7; }
 .footer-links { display: flex; gap: 45px; }
 .footer-group { display: flex; flex-direction: column; gap: 12px; min-width: 110px; color: #b8c7c8; font-size: 12px; }
@@ -221,7 +219,7 @@ button { color: inherit; }
 .dark-mode .project-info { color: #e7f1ed; }
 .dark-mode .approach-section { background: #132e3c; }
 .dark-mode .approach-card { background: #112a39; border-color: var(--line); }
-.dark-mode .field input, .dark-mode .field textarea { background: #0b1d2a; color: var(--ink); border-color: var(--line); }
+.dark-mode .field input, .dark-mode .field textarea, .dark-mode .field select { background: #0b1d2a; color: var(--ink); border-color: var(--line); }
 .dark-mode .icon-box { background: #16443f; color: #74ead0; }
 .dark-mode .stat-strip { border-color: var(--line); }
 .dark-mode .erp-metrics div { background: #e3f0ed; }
@@ -229,6 +227,7 @@ button { color: inherit; }
 .dark-mode .eyebrow { color: #8fc9c0; }
 .dark-mode .blog-meta { color: #8fb0ac; }
 .dark-mode .field label { color: #9fb6b9; }
+.erp-areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 @media (max-width: 900px) {
   .nav-links { gap: 17px; }
@@ -261,6 +260,7 @@ button { color: inherit; }
   .section { padding-block: 68px; }
   .two-col, .contact-layout { grid-template-columns: 1fr; gap: 35px; }
   .services-grid { grid-template-columns: 1fr; }
+  .erp-areas-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 260px; }
   .values-grid, .team-grid, .project-grid, .insights-grid, .approach-grid { grid-template-columns: 1fr; }
   .coming-soon-grid { grid-template-columns: 1fr; }  .team-avatar { aspect-ratio: 1.65; }

@@ -9,13 +9,18 @@ export async function onRequestPost(context) {
     return json({ success: false, message: "Invalid request body." }, 400);
   }
 
-  const { name, email, message, company } = body || {};
+  const { name, email, message, company, interest = "general" } = body || {};
+  const interests = {
+    general: "General enquiry",
+    erp: "Upcoming Nevixs ERP",
+    "custom-software": "Custom software",
+  };
 
   // Honeypot field: real visitors never fill this, bots usually do.
   if (company) return json({ success: true });
 
-  if (!isNonEmptyString(name, 100) || !isValidEmail(email) || !isNonEmptyString(message, 5000)) {
-    return json({ success: false, message: "Please fill in all fields with a valid email." }, 400);
+  if (!isNonEmptyString(name, 100) || !isValidEmail(email) || !isNonEmptyString(message, 5000) || typeof interest !== "string" || !Object.hasOwn(interests, interest)) {
+    return json({ success: false, message: "Please provide your name, a valid email, an enquiry type, and a message." }, 400);
   }
 
   const apiKey = env.RESEND_API_KEY;
@@ -26,6 +31,7 @@ export async function onRequestPost(context) {
   const safeName = escapeHtml(name.trim());
   const safeEmail = escapeHtml(email.trim());
   const safeMessage = escapeHtml(message.trim()).replace(/\n/g, "<br>");
+  const safeInterest = escapeHtml(interests[interest]);
 
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -34,8 +40,8 @@ export async function onRequestPost(context) {
       from: "Nevixs Technology <enquiries@nevixs.com>",
       to: ["nevixstechnology@gmail.com"],
       reply_to: email.trim(),
-      subject: "New Nevixs Technology enquiry",
-      html: `<p><strong>Name:</strong> ${safeName}</p><p><strong>Email:</strong> ${safeEmail}</p><p><strong>Message:</strong></p><p>${safeMessage}</p>`,
+      subject: `New Nevixs enquiry: ${interests[interest]}`,
+      html: `<p><strong>Name:</strong> ${safeName}</p><p><strong>Email:</strong> ${safeEmail}</p><p><strong>Interested in:</strong> ${safeInterest}</p><p><strong>Message:</strong></p><p>${safeMessage}</p>`,
     }),
   });
 
