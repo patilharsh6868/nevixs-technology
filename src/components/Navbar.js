@@ -17,18 +17,22 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
-    const saved = localStorage.getItem("nevixs-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setDark(saved ? saved === "dark" : prefersDark);
+    setDark(document.documentElement.classList.contains("dark-mode"));
   }, []);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark-mode", dark);
-    localStorage.setItem("nevixs-theme", dark ? "dark" : "light");
-  }, [dark]);
+  function toggleTheme() {
+    const nextDark = !dark;
+    document.documentElement.classList.toggle("dark-mode", nextDark);
+    setDark(nextDark);
+    try {
+      localStorage.setItem("nevixs-theme", nextDark ? "dark" : "light");
+    } catch (error) {
+      console.warn("Unable to save the Nevixs theme preference.", error);
+    }
+  }
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
@@ -42,7 +46,7 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="nav-actions">
-          <button className="theme-toggle" type="button" onClick={() => setDark((value) => !value)} aria-label={`Switch to ${dark ? "light" : "dark"} mode`} title={`Switch to ${dark ? "light" : "dark"} mode`}>
+          <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${dark ? "light" : "dark"} mode`} title={`Switch to ${dark ? "light" : "dark"} mode`}>
             {dark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <Link className="button button-dark nav-cta" href="/contact">Let&apos;s talk <ArrowUpRight size={15} /></Link>

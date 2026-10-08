@@ -25,7 +25,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en" className="dark-mode" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          try {
+            document.documentElement.classList.toggle("dark-mode", localStorage.getItem("nevixs-theme") !== "light");
+          } catch (error) {
+            console.warn("Unable to read the saved Nevixs theme.", error);
+          }
+        ` }} />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

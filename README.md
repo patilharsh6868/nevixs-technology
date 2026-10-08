@@ -16,6 +16,9 @@ npm run dev
 
 Visit `http://localhost:3000`.
 
+The site defaults to dark mode for new visitors. The theme toggle saves the visitor's
+choice locally and restores it before the page paints on subsequent visits.
+
 ## Routes
 
 - `/` Home
