@@ -1,6 +1,6 @@
-# Nevixs Technology
+# Nevixs Technologies
 
-A responsive company website for Nevixs Technology, built with Next.js App Router, React, Tailwind CSS, Framer Motion, and Lucide icons.
+A responsive company website for Nevixs Technologies, built with Next.js App Router, React, Tailwind CSS, Framer Motion, and Lucide icons.
 
 ## Requirements
 

@@ -8,7 +8,7 @@ import Logo from "@/components/Logo";
 
 const links = [
   ["About", "/about"],
-  ["ERP", "/erp"],
+  ["Business OS", "/erp"],
   ["Services", "/services"],
   ["Insights", "/blog"],
   ["Contact", "/contact"],
@@ -17,7 +17,7 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains("dark-mode"));
@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="container nav-inner">
-        <Logo />
+        <Logo priority />
         <nav className={`nav-links${menuOpen ? " open" : ""}`} aria-label="Main navigation">
           {links.map(([label, href]) => (
             <Link key={href} className={pathname === href ? "active" : ""} aria-current={pathname === href ? "page" : undefined} href={href}>{label}</Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
           <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${dark ? "light" : "dark"} mode`} title={`Switch to ${dark ? "light" : "dark"} mode`}>
             {dark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
-          <Link className="button button-dark nav-cta" href="/contact">Let&apos;s talk <ArrowUpRight size={15} /></Link>
+          <a className="button button-dark nav-cta" href="https://app.nevixs.com">Open app <ArrowUpRight size={15} /></a>
           <button className="menu-toggle" type="button" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen}>
             {menuOpen ? <X size={19} /> : <Menu size={19} />}
           </button>

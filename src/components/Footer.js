@@ -12,11 +12,11 @@ export default function Footer() {
             <p className="footer-note">Thoughtful software for the way your business works today, and where it wants to go next.</p>
           </div>
           <div className="footer-links">
-            <div className="footer-group"><strong>Explore</strong><Link href="/erp">ERP</Link><Link href="/about">About us</Link><Link href="/services">Services</Link><Link href="/blog">Insights</Link></div>
-            <div className="footer-group"><strong>Connect</strong><Link href="/contact">Start a conversation <ArrowUpRight size={12} /></Link><a href="mailto:nevixstechnology@gmail.com">Email us <ArrowUpRight size={12} /></a><a href="https://www.instagram.com/nevixstechnology/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={12} /></a></div>
+            <div className="footer-group"><strong>Explore</strong><Link href="/erp">Business OS</Link><Link href="/about">About us</Link><Link href="/services">Services</Link><Link href="/blog">Insights</Link></div>
+            <div className="footer-group"><strong>Connect</strong><a href="https://app.nevixs.com">Open Business OS <ArrowUpRight size={12} /></a><Link href="/contact">Start a conversation <ArrowUpRight size={12} /></Link><a href="mailto:support@nevixs.com">support@nevixs.com <ArrowUpRight size={12} /></a><a href="https://www.instagram.com/nevixstechnology/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={12} /></a></div>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Nevixs Technology</span><span>Pune, Maharashtra, India</span><span>Made for what&apos;s next.</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} Nevixs Technologies</span><span>Pune, Maharashtra, India</span><span>Made for what&apos;s next.</span></div>
       </div>
     </footer>
   );

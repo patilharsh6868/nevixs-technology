@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 const REQUEST_TIMEOUT_MS = 15000;
 const INTEREST_LABELS = {
   general: "General enquiry",
-  erp: "Upcoming Nevixs ERP",
+  erp: "NEVIXS Business OS",
   "custom-software": "Custom software",
 };
 
@@ -49,7 +49,7 @@ export default function ContactForm() {
       setInterest("general");
     } catch (_error) {
       setError(true);
-      setFallback(`mailto:nevixstechnology@gmail.com?subject=${encodeURIComponent("New Nevixs Technology enquiry")}&body=${encodeURIComponent(`Interested in: ${INTEREST_LABELS[payload.interest] || INTEREST_LABELS.general}\nName: ${payload.name || ""}\nEmail: ${payload.email || ""}\n\n${payload.message || ""}`)}`);
+      setFallback(`mailto:support@nevixs.com?subject=${encodeURIComponent("New Nevixs Technologies enquiry")}&body=${encodeURIComponent(`Interested in: ${INTEREST_LABELS[payload.interest] || INTEREST_LABELS.general}\nName: ${payload.name || ""}\nEmail: ${payload.email || ""}\n\n${payload.message || ""}`)}`);
     } finally {
       clearTimeout(timeout);
       setSending(false);
@@ -61,8 +61,8 @@ export default function ContactForm() {
       <div className="form-grid">
         <div className="field"><label htmlFor="name">Your name</label><input id="name" name="name" autoComplete="name" placeholder="Name" required /></div>
         <div className="field"><label htmlFor="email">Email address</label><input id="email" name="email" type="email" autoComplete="email" placeholder="you@company.com" required /></div>
-        <div className="field full"><label htmlFor="interest">What are you interested in?</label><select id="interest" name="interest" value={interest} onChange={(event) => setInterest(event.target.value)}><option value="general">General enquiry</option><option value="erp">Upcoming Nevixs ERP</option><option value="custom-software">Custom software</option></select></div>
-        <div className="field full"><label htmlFor="message">What are you building?</label><textarea id="message" name="message" placeholder="A little about your project, goals, or the problem you want to solve..." required /></div>
+        <div className="field full"><label htmlFor="interest">What are you interested in?</label><select id="interest" name="interest" value={interest} onChange={(event) => setInterest(event.target.value)}><option value="general">General enquiry</option><option value="erp">NEVIXS Business OS</option><option value="custom-software">Custom software</option></select></div>
+        <div className="field full"><label htmlFor="message">{interest === "erp" ? "What does your business need?" : "How can we help?"}</label><textarea id="message" name="message" placeholder={interest === "erp" ? "Tell us about your business and the ERP, CRM, HR, or payroll workflows you would like to discuss..." : "A little about your project, goals, or the problem you want to solve..."} maxLength={5000} required /></div>
       </div>
       <input type="text" name="company" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-9999px" }} aria-hidden="true" />
       <button className="button button-dark" type="submit" disabled={sending}>{sending ? "Sending..." : "Send enquiry"} <ArrowUpRight size={16} /></button>

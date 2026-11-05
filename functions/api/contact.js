@@ -37,7 +37,7 @@ export async function onRequestPost(context) {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: "Nevixs Technology <enquiries@nevixs.com>",
+      from: "Nevixs Technologies <enquiries@nevixs.com>",
       to: ["nevixstechnology@gmail.com"],
       reply_to: email.trim(),
       subject: `New Nevixs enquiry: ${interests[interest]}`,
