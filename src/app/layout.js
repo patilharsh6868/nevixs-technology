@@ -20,6 +20,12 @@ export const metadata = {
     url: "https://nevixs.com",
     siteName: "Nevixs Technologies",
     type: "website",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary",
+    title: "NEVIXS Business OS | ERP, CRM, HR & Payroll Software",
+    description: "ERP, CRM, HR, and payroll in one connected workspace from Nevixs Technologies in Pune, India.",
   },
 };
 
@@ -47,6 +53,7 @@ export default function RootLayout({ children }) {
                 "@type": "Organization",
                 "@id": "https://nevixs.com/#organization",
                 name: "Nevixs Technologies",
+                alternateName: ["NEVIXS", "Nevixs Technology"],
                 url: "https://nevixs.com",
                 logo: "https://nevixs.com/nevixs-mark.svg",
                 email: "support@nevixs.com",
@@ -57,6 +64,7 @@ export default function RootLayout({ children }) {
                 "@type": "WebSite",
                 "@id": "https://nevixs.com/#website",
                 name: "Nevixs Technologies",
+                alternateName: ["NEVIXS", "Nevixs Technology"],
                 url: "https://nevixs.com",
                 publisher: { "@id": "https://nevixs.com/#organization" },
               },

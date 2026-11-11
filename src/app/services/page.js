@@ -2,8 +2,14 @@ import Link from "next/link";
 import { ArrowRight, Bot, Boxes, Building2, CalendarDays, Cloud, CreditCard, Database, ShoppingBag } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import ServiceCard from "@/components/ServiceCard";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = { title: "Services", description: "Custom business apps, customer applications, enterprise systems, and future-ready software." };
+export const metadata = pageMetadata({
+  title: "Custom Software & Business Application Services",
+  description: "Custom business applications, workflow automation, data platforms, and cloud modernization from Nevixs Technologies in Pune. Discuss your software needs.",
+  path: "/services",
+});
 
 const services = [
   { icon: "CreditCard", title: "Business Apps", description: "Make everyday operations easier to manage with tools shaped around the way your teams already work.", tags: ["Billing", "Expenses", "Leave management"] },
@@ -18,8 +24,10 @@ const services = [
 
 export default function ServicesPage() {
   return <>
+    <Breadcrumbs label="Software services" path="/services" />
     <section className="page-hero"><div className="container"><span className="eyebrow">What we build</span><h1>Software for the work ahead.</h1><p>From the first workflow sketch to a mature platform, we help make technology useful, dependable, and ready to evolve.</p></div></section>
     <section className="section"><div className="container"><Reveal className="section-heading"><span className="eyebrow">Our capabilities</span><h2 className="section-title">The right solution starts with your real-world needs.</h2></Reveal><div className="services-grid">{services.map((service, index) => <ServiceCard key={service.title} {...service} index={index} />)}</div></div></section>
+    <section className="section" style={{ paddingTop: 0 }}><div className="container"><span className="eyebrow">Looking for connected business software?</span><h2 className="section-title">Explore NEVIXS Business OS.</h2><p className="body-copy">Bring ERP, CRM, HR, and payroll into one workspace, or talk to us about a custom application for your workflows.</p><Link href="/erp" className="button button-outline">Explore ERP, CRM, HR &amp; payroll <ArrowRight size={15} /></Link></div></section>
     <section className="section" style={{ paddingTop: 0 }}><div className="container"><div className="cta-band"><div><span className="eyebrow">Have a particular challenge?</span><h2>Let&apos;s work out the right next step.</h2></div><Link href="/contact" className="button button-dark">Tell us about it <ArrowRight size={15} /></Link></div></div></section>
   </>;
 }

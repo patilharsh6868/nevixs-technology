@@ -26,6 +26,11 @@ button { color: inherit; }
 
 .site-shell { min-height: 100vh; overflow: clip; }
 .container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+.breadcrumbs { padding-block: 16px; color: var(--muted); font-size: 13px; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.breadcrumbs li { display: flex; align-items: center; gap: 12px; }
+.breadcrumbs a { text-decoration: underline; text-underline-offset: 4px; }
+.breadcrumbs [aria-current="page"] { color: var(--ink); }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #4f6d6b; font: 500 11px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
 .eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--teal); }
 .display { font-size: clamp(42px, 6vw, 76px); line-height: .99; letter-spacing: -.055em; font-weight: 600; }

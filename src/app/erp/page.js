@@ -1,19 +1,14 @@
 import Link from "next/link";
 import { ArrowRight, Boxes, CreditCard, Users, ContactRound } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Business OS: ERP, CRM, HR & Payroll Software",
   description: "Combine ERP, CRM, HR management, and payroll in NEVIXS Business OS. Connect inventory, purchasing, production, sales, customers, and people in one platform.",
-  alternates: { canonical: "/erp" },
-  openGraph: {
-    title: "NEVIXS Business OS | ERP, CRM, HR & Payroll",
-    description: "One connected platform for business operations, customer relationships, human resources, and payroll.",
-    url: "https://nevixs.com/erp",
-    type: "website",
-    siteName: "Nevixs Technologies",
-  },
-};
+  path: "/erp",
+});
 
 const productAreas = [
   { icon: Boxes, title: "ERP: connected business operations", description: "Enterprise resource planning for inventory, purchasing, suppliers, production, and finance. Keep materials, orders, expenses, and payments together." },
@@ -24,6 +19,7 @@ const productAreas = [
 
 export default function ErpPage() {
   return <>
+    <Breadcrumbs label="Business OS" path="/erp" />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",

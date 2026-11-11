@@ -1,0 +1,17 @@
+/
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/about*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/erp*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/services*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/blog*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/contact*
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
