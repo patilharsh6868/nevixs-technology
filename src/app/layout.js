@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CursorSparkles from "@/components/CursorSparkles";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata = {
   metadataBase: new URL("https://nevixs.com"),
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
+        <WhatsAppButton />
         <CursorSparkles />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",

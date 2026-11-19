@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
 import WorkflowExplorer from "@/components/WorkflowExplorer";
+import ProductVideo from "@/components/ProductVideo";
 
 export const metadata = pageMetadata({
   title: "Business OS: ERP, CRM, HR & Payroll Software",
@@ -50,7 +51,16 @@ export default function ErpPage() {
         </div>
       </div>
     </section>
-    <nav className="container product-jump-links" aria-label="Explore Business OS"><a href="#erp">ERP</a><a href="#crm">CRM</a><a href="#hr">HR</a><a href="#payroll">Payroll</a><a href="#workflows">Workflows</a><a href="#getting-started">Getting started</a><a href="#product-questions">FAQs</a></nav>
+    <nav className="container product-jump-links" aria-label="Explore Business OS"><a href="#walkthrough">Walkthrough</a><a href="#erp">ERP</a><a href="#crm">CRM</a><a href="#hr">HR</a><a href="#payroll">Payroll</a><a href="#workflows">Workflows</a><a href="#getting-started">Getting started</a><a href="#product-questions">FAQs</a></nav>
+    <section className="section product-walkthrough" id="walkthrough">
+      <div className="container">
+        <div className="section-heading walkthrough-heading">
+          <h2 className="section-title">See a project move through approvals</h2>
+          <p className="body-copy">Follow a sample fabrication project from scope and drawing approval through procurement, production, inspection, dispatch, and handover.</p>
+        </div>
+        <ProductVideo />
+      </div>
+    </section>
     <section className="section">
       <div className="container">
         <Reveal className="section-heading">

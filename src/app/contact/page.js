@@ -1,5 +1,6 @@
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { whatsappNumber, whatsappUrl } from "@/components/WhatsAppButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -22,6 +23,7 @@ export default function ContactPage() {
         <aside className="contact-info" aria-label="Other ways to contact us">
           <div className="contact-detail"><MapPin size={19} aria-hidden="true" /><span>Pune, Maharashtra, India</span></div>
           <div className="contact-detail"><Mail size={19} aria-hidden="true" /><a href="mailto:support@nevixs.com">support@nevixs.com</a></div>
+          <div className="contact-detail"><MessageCircle size={19} aria-hidden="true" /><a href={whatsappUrl} target="_blank" rel="noopener noreferrer">WhatsApp {whatsappNumber}</a></div>
         </aside>
       </div>
     </section>

@@ -66,6 +66,7 @@ export default function ContactForm() {
       </div>
       <input type="text" name="company" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-9999px" }} aria-hidden="true" />
       <button className="button button-dark" type="submit" disabled={sending}>{sending ? "Sending..." : "Send enquiry"} <ArrowUpRight size={16} /></button>
+      <p className="form-note">By sending, you agree that we can use these details to reply. See our <a href="/privacy">privacy policy</a>.</p>
       {submitted && <p className="form-success" role="status">Thanks for reaching out. Your enquiry has been sent to the Nevixs team.</p>}
       {error && <p className="form-error" role="alert">We couldn&apos;t send that just now. Please <a href={fallback}>email us directly</a> instead.</p>}
     </form>
