@@ -16,15 +16,9 @@ npm run dev
 
 Visit `http://localhost:3000`.
 
-The site defaults to light mode for new visitors. The theme toggle saves the visitor's
-choice locally and restores it before the page paints on subsequent visits.
-
-The website uses a product-first studio design: white and charcoal surfaces,
-oversized editorial headings, open layouts, and restrained sand highlights.
-The main SVG brand mark is unchanged. Theme tokens are defined in
-`src/app/globals.css`, with a charcoal dark theme and separate tokens for the
-homepage glow, form controls, focus rings, and enquiry feedback. The product
-screenshot keeps its original colours in both themes.
+The website uses a light theme only: white and charcoal surfaces, oversized
+editorial headings, open layouts, and restrained sand highlights. The main SVG
+brand mark is unchanged. Theme tokens are defined in `src/app/globals.css`.
 
 The homepage shows a product screenshot with demo data and a keyboard-accessible
 workflow explorer. The workflow examples are illustrative, not app screens. There are no

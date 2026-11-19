@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import Logo from "@/components/Logo";
 
 const links = [
@@ -17,22 +17,6 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark-mode"));
-  }, []);
-
-  function toggleTheme() {
-    const nextDark = !dark;
-    document.documentElement.classList.toggle("dark-mode", nextDark);
-    setDark(nextDark);
-    try {
-      localStorage.setItem("nevixs-theme", nextDark ? "dark" : "light");
-    } catch (error) {
-      console.warn("Unable to save the Nevixs theme preference.", error);
-    }
-  }
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
@@ -58,9 +42,6 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="nav-actions">
-          <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${dark ? "light" : "dark"} mode`} title={`Switch to ${dark ? "light" : "dark"} mode`}>
-            {dark ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
           <a className="button button-dark nav-cta" href="https://app.nevixs.com">Open app <ArrowUpRight size={15} /></a>
           <button id="navigation-toggle" className="menu-toggle" type="button" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="main-navigation">
             {menuOpen ? <X size={19} /> : <Menu size={19} />}

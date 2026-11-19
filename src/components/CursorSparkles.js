@@ -3,8 +3,7 @@
 import { useEffect, useRef } from "react";
 
 const MAX_PARTICLES = 90;
-const LIGHT_COLORS = ["#b8955a", "#c9a96e", "#8a6d3b", "#d6bb85"];
-const DARK_COLORS = ["#f3e2bd", "#e8dfd1", "#ffd98a", "#fff4dc"];
+const COLORS = ["#b8955a", "#c9a96e", "#8a6d3b", "#d6bb85"];
 
 export default function CursorSparkles() {
   const canvasRef = useRef(null);
@@ -28,8 +27,6 @@ export default function CursorSparkles() {
     }
 
     function spawn(x, y, count) {
-      const dark = document.documentElement.classList.contains("dark-mode");
-      const colors = dark ? DARK_COLORS : LIGHT_COLORS;
       for (let i = 0; i < count && particles.length < MAX_PARTICLES; i += 1) {
         particles.push({
           x, y,
@@ -39,7 +36,7 @@ export default function CursorSparkles() {
           decay: .018 + Math.random() * .022,
           size: 1.4 + Math.random() * 2.6,
           star: Math.random() < .3,
-          color: colors[Math.floor(Math.random() * colors.length)],
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
         });
       }
       if (!frame) frame = requestAnimationFrame(draw);

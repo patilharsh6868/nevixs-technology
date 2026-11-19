@@ -32,16 +32,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `
-          try {
-            document.documentElement.classList.toggle("dark-mode", localStorage.getItem("nevixs-theme") === "dark");
-          } catch (error) {
-            console.warn("Unable to read the saved Nevixs theme.", error);
-          }
-        ` }} />
-      </head>
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <Navbar />
