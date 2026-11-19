@@ -19,7 +19,7 @@ export default function ContactForm() {
 
   useEffect(() => {
     const topic = new URLSearchParams(window.location.search).get("topic");
-    if (topic === "erp") setInterest(topic);
+    if (topic === "erp" || topic === "custom-software") setInterest(topic);
   }, []);
 
   async function handleSubmit(event) {

@@ -8,15 +8,15 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div>
-            <Logo light />
-            <p className="footer-note">Thoughtful software for the way your business works today, and where it wants to go next.</p>
+            <Logo />
+            <p className="footer-note">Business OS and custom software.<br />Less friction. More useful work.</p>
           </div>
           <div className="footer-links">
             <div className="footer-group"><strong>Explore</strong><Link href="/erp">Business OS</Link><Link href="/about">About us</Link><Link href="/services">Services</Link><Link href="/blog">Insights</Link></div>
-            <div className="footer-group"><strong>Connect</strong><a href="https://app.nevixs.com">Open Business OS <ArrowUpRight size={12} /></a><Link href="/contact">Start a conversation <ArrowUpRight size={12} /></Link><a href="mailto:support@nevixs.com">support@nevixs.com <ArrowUpRight size={12} /></a><a href="https://www.instagram.com/nevixstechnology/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={12} /></a></div>
+            <div className="footer-group"><strong>Connect</strong><a href="https://app.nevixs.com">Open Business OS <ArrowUpRight size={12} aria-hidden="true" /></a><Link href="/contact">Start a conversation <ArrowUpRight size={12} aria-hidden="true" /></Link><a href="mailto:support@nevixs.com">support@nevixs.com <ArrowUpRight size={12} aria-hidden="true" /></a><a href="https://www.instagram.com/nevixstechnologies/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={12} aria-hidden="true" /></a></div>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Nevixs Technologies</span><span>Pune, Maharashtra, India</span><span>Made for what&apos;s next.</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} Nevixs Technologies</span><span>Independent software studio / Pune, India</span><a href="mailto:support@nevixs.com">Let&apos;s make work simpler.</a></div>
       </div>
     </footer>
   );

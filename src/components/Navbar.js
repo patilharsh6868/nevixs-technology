@@ -7,9 +7,9 @@ import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
 import Logo from "@/components/Logo";
 
 const links = [
-  ["About", "/about"],
   ["Business OS", "/erp"],
   ["Services", "/services"],
+  ["Studio", "/about"],
   ["Insights", "/blog"],
   ["Contact", "/contact"],
 ];
@@ -36,13 +36,25 @@ export default function Navbar() {
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        document.getElementById("navigation-toggle")?.focus();
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
+
   return (
     <header className="navbar">
       <div className="container nav-inner">
         <Logo priority />
-        <nav className={`nav-links${menuOpen ? " open" : ""}`} aria-label="Main navigation">
+        <nav id="main-navigation" className={`nav-links${menuOpen ? " open" : ""}`} aria-label="Main navigation">
           {links.map(([label, href]) => (
-            <Link key={href} className={pathname === href ? "active" : ""} aria-current={pathname === href ? "page" : undefined} href={href}>{label}</Link>
+            <Link key={href} className={pathname === href ? "active" : ""} aria-current={pathname === href ? "page" : undefined} href={href} onClick={() => setMenuOpen(false)}>{label}</Link>
           ))}
         </nav>
         <div className="nav-actions">
@@ -50,7 +62,7 @@ export default function Navbar() {
             {dark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <a className="button button-dark nav-cta" href="https://app.nevixs.com">Open app <ArrowUpRight size={15} /></a>
-          <button className="menu-toggle" type="button" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen}>
+          <button id="navigation-toggle" className="menu-toggle" type="button" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="main-navigation">
             {menuOpen ? <X size={19} /> : <Menu size={19} />}
           </button>
         </div>

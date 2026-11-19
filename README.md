@@ -19,6 +19,18 @@ Visit `http://localhost:3000`.
 The site defaults to light mode for new visitors. The theme toggle saves the visitor's
 choice locally and restores it before the page paints on subsequent visits.
 
+The website uses a product-first studio design: white and charcoal surfaces,
+oversized editorial headings, open layouts, and restrained sand highlights.
+The main SVG brand mark is unchanged. Theme tokens are defined in
+`src/app/globals.css`, with a charcoal dark theme and separate tokens for the
+homepage glow, form controls, focus rings, and enquiry feedback. The product
+screenshot keeps its original colours in both themes.
+
+The homepage shows a product screenshot with demo data and a keyboard-accessible
+workflow explorer. The workflow examples are illustrative, not app screens. There are no
+auto-advancing panels or forced sign-up prompts; the app remains directly accessible.
+Content renders visibly without scroll-triggered entrance animations.
+
 ## Routes
 
 - `/` Home
@@ -29,6 +41,12 @@ choice locally and restores it before the page paints on subsequent visits.
 - `/blog` Insights and upcoming article previews
 
 NEVIXS Business OS is available at `https://app.nevixs.com`. The marketing site links to the app and accepts demo enquiries.
+
+The Business OS page includes an interactive workflow guide, deep links to all four
+modules, evaluation steps, and product FAQs. The homepage connection map and workflow
+guide are explanatory illustrations, not product screenshots or live data. Replace
+illustrations with genuine, permission-cleared screenshots only when available;
+do not imply unverified compliance, banking, or integration capabilities.
 
 ## Search visibility
 

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { BarChart3, Bot, Boxes, Building2, CalendarDays, Cloud, Code2, CreditCard, Database, ShoppingBag, ShoppingCart, ShieldCheck, Sparkles } from "lucide-react";
 
 const iconMap = {
@@ -19,15 +16,15 @@ const iconMap = {
   Cloud,
 };
 
-export default function ServiceCard({ icon, title, description, tags = [], index = 0 }) {
+export default function ServiceCard({ icon, title, description, tags = [] }) {
   const Icon = iconMap[icon] || Boxes;
 
   return (
-    <motion.article className="service-card" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .15 }} transition={{ duration: .45, delay: index * .07 }}>
+    <article className="service-card">
       <div className="icon-box"><Icon size={21} strokeWidth={1.8} /></div>
       <h3>{title}</h3>
       <p>{description}</p>
       <div className="service-tags">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-    </motion.article>
+    </article>
   );
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Bot, Boxes, Building2, CalendarDays, Cloud, CreditCard, Database, ShoppingBag } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import ServiceCard from "@/components/ServiceCard";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -25,9 +25,9 @@ const services = [
 export default function ServicesPage() {
   return <>
     <Breadcrumbs label="Software services" path="/services" />
-    <section className="page-hero"><div className="container"><span className="eyebrow">What we build</span><h1>Software for the work ahead.</h1><p>From the first workflow sketch to a mature platform, we help make technology useful, dependable, and ready to evolve.</p></div></section>
-    <section className="section"><div className="container"><Reveal className="section-heading"><span className="eyebrow">Our capabilities</span><h2 className="section-title">The right solution starts with your real-world needs.</h2></Reveal><div className="services-grid">{services.map((service, index) => <ServiceCard key={service.title} {...service} index={index} />)}</div></div></section>
+    <section className="page-hero"><div className="container"><h1>Custom software</h1><p>Business applications, workflow automation, and software modernization built around how your team works.</p><div className="product-actions"><Link href="/contact?topic=custom-software" className="button">Discuss your project <ArrowRight size={16} /></Link><a href="#capabilities" className="text-action">See what we build <ArrowRight size={16} /></a></div></div></section>
+    <section className="section" id="capabilities"><div className="container"><Reveal className="section-heading"><h2 className="section-title">What we build</h2></Reveal><div className="services-grid">{services.map((service) => <ServiceCard key={service.title} {...service} />)}</div></div></section>
     <section className="section" style={{ paddingTop: 0 }}><div className="container"><span className="eyebrow">Looking for connected business software?</span><h2 className="section-title">Explore NEVIXS Business OS.</h2><p className="body-copy">Bring ERP, CRM, HR, and payroll into one workspace, or talk to us about a custom application for your workflows.</p><Link href="/erp" className="button button-outline">Explore ERP, CRM, HR &amp; payroll <ArrowRight size={15} /></Link></div></section>
-    <section className="section" style={{ paddingTop: 0 }}><div className="container"><div className="cta-band"><div><span className="eyebrow">Have a particular challenge?</span><h2>Let&apos;s work out the right next step.</h2></div><Link href="/contact" className="button button-dark">Tell us about it <ArrowRight size={15} /></Link></div></div></section>
+    <section className="section" style={{ paddingTop: 0 }}><div className="container"><div className="cta-band"><h2>Have a project in mind?</h2><Link href="/contact?topic=custom-software" className="button">Discuss your project <ArrowRight size={15} /></Link></div></div></section>
   </>;
 }

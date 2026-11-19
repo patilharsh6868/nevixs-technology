@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CursorSparkles from "@/components/CursorSparkles";
 
 export const metadata = {
   metadataBase: new URL("https://nevixs.com"),
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
+        <CursorSparkles />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
@@ -57,7 +59,7 @@ export default function RootLayout({ children }) {
                 url: "https://nevixs.com",
                 logo: "https://nevixs.com/nevixs-mark.svg",
                 email: "support@nevixs.com",
-                sameAs: ["https://www.instagram.com/nevixstechnology/"],
+                sameAs: ["https://www.instagram.com/nevixstechnologies/"],
                 address: { "@type": "PostalAddress", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
               },
               {
