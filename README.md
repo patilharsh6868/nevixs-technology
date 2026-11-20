@@ -79,6 +79,14 @@ ERP enquiry links use `/contact?topic=erp` to preselect the Business OS option.
 The selected enquiry type is included in both the delivered email and the mailto fallback.
 Requests from older forms without an enquiry type are treated as general enquiries.
 
+## AWS hosting badge
+
+The Business OS page states that the app is hosted on AWS (Mumbai) and shows the
+AWS trademark notice. To display the official Powered by AWS logo, download it from
+the AWS co-marketing tools page using the Nevixs AWS account, save it unmodified as
+`public/powered-by-aws.svg` (or `.png`), and rebuild. The badge appears automatically
+once the file exists. Follow the [AWS Trademark Guidelines](https://aws.amazon.com/trademark-guidelines/).
+
 ## Express API placeholder
 
 The `server/` folder is an unused placeholder and is not wired into the deployed site.

@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
 import WorkflowExplorer from "@/components/WorkflowExplorer";
 import ProductVideo from "@/components/ProductVideo";
+import AwsHosting from "@/components/AwsHosting";
 
 export const metadata = pageMetadata({
   title: "Business OS: ERP, CRM, HR & Payroll Software",
@@ -23,6 +24,7 @@ const questions = [
   { question: "Can I see the actual product before deciding?", answer: "Yes. Open Business OS to access the app, or request a demo and tell us which workflows you want to explore. The workflow diagrams on this page are explanatory guides, not screenshots." },
   { question: "Does the payroll module cover our statutory requirements?", answer: "Requirements vary by location and business. Share the calculations, filings, and payment process you need so we can confirm current coverage. This page does not promise automatic statutory compliance or direct bank payouts." },
   { question: "What about existing data and integrations?", answer: "Tell us what systems you use, what data you need to bring across, and where work moves between tools. We can discuss the scope before you decide; an integration or migration is not assumed to be included." },
+  { question: "Where is Business OS hosted?", answer: "Business OS runs on Amazon Web Services (AWS) in the Asia Pacific (Mumbai) Region. Ask our team if you need more detail about how your data is stored and who can access it." },
   { question: "Where can I get pricing and setup details?", answer: "Send a Business OS enquiry with your team size, modules of interest, and main workflows. Ask our team about pricing, setup, and support for your requirements." },
 ];
 
@@ -103,5 +105,6 @@ export default function ErpPage() {
         </Reveal>
       </div>
     </section>
+    <AwsHosting />
   </>;
 }

@@ -10,9 +10,9 @@ export const metadata = pageMetadata({
 export default function PrivacyPage() {
   return <>
     <Breadcrumbs label="Privacy policy" path="/privacy" />
-    <section className="page-hero"><div className="container"><h1>Privacy policy</h1><p>Last updated: 19 November 2026</p></div></section>
+    <section className="page-hero"><div className="container"><h1>Privacy policy</h1><p>Last updated: 20 November 2026</p></div></section>
     <article className="section legal-page"><div className="container legal-content">
-      <p>This policy explains how Nevixs Technologies (&quot;Nevixs&quot;, &quot;we&quot;, &quot;us&quot;), based in Pune, Maharashtra, India, handles personal information on this website, nevixs.com. NEVIXS Business OS at app.nevixs.com is a separate service; data stored in it is covered by the agreement you make with us when you use the app.</p>
+      <p>This policy explains how Nevixs Technologies (&quot;Nevixs&quot;, &quot;we&quot;, &quot;us&quot;), based in Pune, Maharashtra, India, handles personal information on this website, nevixs.com. NEVIXS Business OS at app.nevixs.com is a separate service, hosted on Amazon Web Services (AWS) in the Asia Pacific (Mumbai) Region; data stored in it is covered by the agreement you make with us when you use the app.</p>
 
       <h2>Information we collect</h2>
       <p><strong>Enquiries you send us.</strong> When you use the contact form, we collect your name, email address, the topic you choose, and your message. If you email us or message us on WhatsApp, we receive the details you share there.</p>
