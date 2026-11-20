@@ -20,8 +20,7 @@ export default function Hero() {
           <div className="product-tour-stage">
             <Image src="/erp-overview-page.png" alt="Business OS overview dashboard with sidebar navigation" width={1282} height={816} unoptimized />
           </div>
-          <figcaption className="preview-toolbar">
-            <span>Business OS screenshot &middot; Demo data</span>
+          <figcaption className="preview-toolbar preview-toolbar-end">
             <Link href="/erp" className="text-action">Explore the modules <ArrowUpRight size={14} aria-hidden="true" /></Link>
           </figcaption>
         </figure>

@@ -119,6 +119,7 @@ h1, h2, h3, h4 { line-height: 1.12; }
 .product-video video { display: block; width: 100%; height: auto; background: var(--soft); }
 .preview-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 16px; padding: 10px 16px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
 .preview-toolbar strong { color: var(--ink); }
+.preview-toolbar-end { justify-content: flex-end; }
 @media (max-width: 640px) {
   .product-hero { padding: 40px 0 36px; }
   .product-hero-heading h1 { font-size: 40px; }
