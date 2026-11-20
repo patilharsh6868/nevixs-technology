@@ -1,25 +1,32 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
 
-const LOGO_FILES = ["powered-by-aws.svg", "powered-by-aws.png"];
+export function AwsLogo({ className = "aws-logo" }) {
+  return <Image src="/powered-by-aws.png" alt="Powered by AWS" className={className} width={200} height={72} unoptimized />;
+}
 
-// The official logo must be downloaded from AWS co-marketing tools by an account holder,
-// so the badge only renders once that file has been added to public/.
-function findLogo() {
-  return LOGO_FILES.find((file) => fs.existsSync(path.join(process.cwd(), "public", file)));
+export function AwsStrip() {
+  return (
+    <div className="aws-strip">
+      <AwsLogo className="aws-logo aws-logo-small" />
+      <p>Hosted on Amazon Web Services in the Asia Pacific (Mumbai) Region</p>
+    </div>
+  );
 }
 
 export default function AwsHosting() {
-  const logo = findLogo();
-
   return (
-    <section className="aws-hosting" aria-label="Hosting">
-      <div className="container aws-hosting-inner">
-        {logo && <Image src={`/${logo}`} alt="Powered by AWS" className="aws-logo" width={160} height={60} unoptimized />}
-        <div>
-          <p className="aws-hosting-text">Business OS is hosted on Amazon Web Services (AWS) in the Asia Pacific (Mumbai) Region.</p>
-          {logo && <p className="aws-trademark">Amazon Web Services, AWS, and the Powered by AWS logo are trademarks of Amazon.com, Inc. or its affiliates.</p>}
+    <section className="section aws-hosting" id="infrastructure" aria-labelledby="aws-hosting-heading">
+      <div className="container aws-hosting-card">
+        <div className="aws-hosting-logo"><AwsLogo /></div>
+        <div className="aws-hosting-copy">
+          <span className="eyebrow">Infrastructure</span>
+          <h2 id="aws-hosting-heading">Built on Amazon Web Services</h2>
+          <p>Business OS runs on AWS cloud infrastructure in the Asia Pacific (Mumbai) Region, so your team can work from any browser.</p>
+          <ul className="aws-facts">
+            <li><strong>Cloud provider</strong><span>Amazon Web Services (AWS)</span></li>
+            <li><strong>Region</strong><span>Asia Pacific (Mumbai)</span></li>
+            <li><strong>Access</strong><span>Web browser at app.nevixs.com</span></li>
+          </ul>
         </div>
       </div>
     </section>

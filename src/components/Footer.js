@@ -18,6 +18,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} Nevixs Technologies</span><span className="footer-legal"><Link href="/privacy">Privacy policy</Link><Link href="/terms">Terms of use</Link></span><span>Pune, India</span></div>
+        <p className="footer-trademark">Amazon Web Services, AWS, and the Powered by AWS logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
       </div>
     </footer>
   );

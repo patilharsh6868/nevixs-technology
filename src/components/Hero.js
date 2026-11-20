@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { AwsStrip } from "@/components/AwsHosting";
 
 export default function Hero() {
   return (
@@ -24,6 +25,7 @@ export default function Hero() {
             <Link href="/erp" className="text-action">Explore the modules <ArrowUpRight size={14} aria-hidden="true" /></Link>
           </figcaption>
         </figure>
+        <AwsStrip />
       </div>
     </section>
   );

@@ -53,7 +53,7 @@ export default function ErpPage() {
         </div>
       </div>
     </section>
-    <nav className="container product-jump-links" aria-label="Explore Business OS"><a href="#walkthrough">Walkthrough</a><a href="#erp">ERP</a><a href="#crm">CRM</a><a href="#hr">HR</a><a href="#payroll">Payroll</a><a href="#workflows">Workflows</a><a href="#getting-started">Getting started</a><a href="#product-questions">FAQs</a></nav>
+    <nav className="container product-jump-links" aria-label="Explore Business OS"><a href="#walkthrough">Walkthrough</a><a href="#erp">ERP</a><a href="#crm">CRM</a><a href="#hr">HR</a><a href="#payroll">Payroll</a><a href="#workflows">Workflows</a><a href="#getting-started">Getting started</a><a href="#infrastructure">Infrastructure</a><a href="#product-questions">FAQs</a></nav>
     <section className="section product-walkthrough" id="walkthrough">
       <div className="container">
         <div className="section-heading walkthrough-heading">
@@ -92,6 +92,7 @@ export default function ErpPage() {
         </ol>
       </div>
     </section>
+    <AwsHosting />
     <section className="section product-faq" id="product-questions"><div className="container faq-layout"><div><span className="eyebrow">Know before you choose</span><h2 className="section-title">Good questions.<br />Clear expectations.</h2><p className="body-copy">Your requirements deserve a specific answer, not a broad promise.</p></div><div className="faq-list">{questions.map(({ question, answer }) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <section className="section">
       <div className="container two-col">
@@ -105,6 +106,5 @@ export default function ErpPage() {
         </Reveal>
       </div>
     </section>
-    <AwsHosting />
   </>;
 }
