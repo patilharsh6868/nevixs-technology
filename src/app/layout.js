@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import CursorSparkles from "@/components/CursorSparkles";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { instagramUrl } from "@/lib/site";
+import { shareImage } from "@/lib/metadata";
 
 export const metadata = {
   metadataBase: new URL("https://nevixs.com"),
@@ -24,11 +25,13 @@ export const metadata = {
     siteName: "Nevixs Technologies",
     type: "website",
     locale: "en_IN",
+    images: [shareImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "NEVIXS Business OS | ERP, CRM, HR & Payroll Software",
     description: "ERP, CRM, HR, and payroll in one connected workspace from Nevixs Technologies in Pune, India.",
+    images: [shareImage.url],
   },
 };
 

@@ -46,7 +46,8 @@ do not imply unverified compliance, banking, or integration capabilities.
 
 Each public page has a canonical URL. Inner pages use shared metadata in
 `src/lib/metadata.js` for unique titles, descriptions, Open Graph URLs, and Twitter
-summary cards. Visible breadcrumbs include matching `BreadcrumbList` structured
+large image cards. Every page shares `public/og-image.png` (1200x630) as its link
+preview image. Visible breadcrumbs include matching `BreadcrumbList` structured
 data. The root layout identifies Nevixs Technologies and its genuine alternate
 brand names; it does not target unrelated brands or misspellings.
 
@@ -62,6 +63,14 @@ The site exports `robots.txt` and `sitemap.xml`. The contact enquiry query strin
 canonicalizes to `/contact`, rather than creating duplicate indexed pages.
 Search engines choose rankings, displayed titles, site names, and sitelinks;
 metadata and structured data cannot guarantee them or visibility for similar spellings.
+
+## Shared content
+
+- Contact links (app URL, support email, WhatsApp, Instagram) are defined once in
+  `src/lib/site.js`. Update them there.
+- Content that still needs confirmation is wrapped in `todo()` from `src/lib/todo.js`.
+  These placeholders are skipped when rendering, so they never appear on the live
+  site. Search the code for `todo(` to find them.
 
 ## Contact form delivery (Cloudflare Pages Function)
 
