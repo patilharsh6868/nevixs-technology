@@ -104,9 +104,11 @@ h1, h2, h3, h4 { line-height: 1.12; }
 .product-disclaimer { margin: 12px 0 0; font-size: 10px; color: #bababa; }
 .product-index :focus-visible { outline-color: #e8dfd1; }
 .product-hero { padding: 64px 0 56px; background: radial-gradient(ellipse at 50% 0%, var(--hero-glow) 0%, transparent 60%), linear-gradient(180deg, var(--paper) 48%, var(--soft)); }
-.product-hero-heading { max-width: 860px; margin: 0 auto 44px; text-align: center; }
+.product-hero-heading { max-width: 1160px; margin: 0 auto 44px; text-align: center; }
 .product-hero-heading .eyebrow { margin-bottom: 16px; }
-.product-hero-heading h1 { margin: 0; font-size: 72px; font-weight: 800; line-height: 1.04; letter-spacing: -.035em; }
+.product-hero-heading h1 { margin: 0; font-size: clamp(48px, 7.6vw, 108px); font-weight: 800; line-height: 1; letter-spacing: -.045em; }
+.hero-gold { display: inline-block; padding-bottom: .06em; background: linear-gradient(100deg, #6b4e1f 0%, #8a6526 30%, #b38633 45%, #8a6526 60%, #6b4e1f 100%); background-size: 250% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent; animation: hero-shine 7s ease-in-out infinite; }
+@keyframes hero-shine { 0%, 15% { background-position: 100% 0; } 60%, 100% { background-position: 0% 0; } }
 .product-hero-heading p { max-width: 48ch; margin: 14px auto 0; color: var(--muted); font-size: 17px; }
 .product-hero-heading .product-actions { justify-content: center; gap: 12px 20px; margin-top: 20px; }
 .product-preview { margin: 0 auto; max-width: 1040px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px -20px var(--preview-shadow); }
@@ -134,7 +136,7 @@ h1, h2, h3, h4 { line-height: 1.12; }
 .aws-logo-small { width: 110px; }
 @media (max-width: 640px) {
   .product-hero { padding: 40px 0 36px; }
-  .product-hero-heading h1 { font-size: 40px; }
+  .product-hero-heading h1 { font-size: clamp(44px, 13vw, 60px); }
   .product-hero-heading p { font-size: 15px; }
   .preview-toolbar { padding-inline: 12px; }
 }
@@ -330,4 +332,5 @@ h1, h2, h3, h4 { line-height: 1.12; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .hero-gold { animation: none; background-position: 50% 0; }
 }

@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="container">
         <div className="product-hero-heading">
           <span className="eyebrow">BUSINESS SOFTWARE BY NEVIXS TECHNOLOGIES</span>
-          <h1>NEVIXS Business OS</h1>
+          <h1>NEVIXS <span className="hero-gold">Business OS</span></h1>
           <p>Manage production, inventory, sales, and payroll in one workspace.</p>
           <div className="product-actions">
             <Link className="button" href="/contact?topic=erp">Request a demo</Link>
