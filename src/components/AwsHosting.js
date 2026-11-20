@@ -19,7 +19,7 @@ export default function AwsHosting() {
         {logo && <Image src={`/${logo}`} alt="Powered by AWS" className="aws-logo" width={160} height={60} unoptimized />}
         <div>
           <p className="aws-hosting-text">Business OS is hosted on Amazon Web Services (AWS) in the Asia Pacific (Mumbai) Region.</p>
-          <p className="aws-trademark">Amazon Web Services, AWS, and the Powered by AWS logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
+          {logo && <p className="aws-trademark">Amazon Web Services, AWS, and the Powered by AWS logo are trademarks of Amazon.com, Inc. or its affiliates.</p>}
         </div>
       </div>
     </section>

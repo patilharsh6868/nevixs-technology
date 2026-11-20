@@ -81,10 +81,11 @@ Requests from older forms without an enquiry type are treated as general enquiri
 
 ## AWS hosting badge
 
-The Business OS page states that the app is hosted on AWS (Mumbai) and shows the
-AWS trademark notice. To display the official Powered by AWS logo, download it from
+The Business OS page states that the app is hosted on AWS (Mumbai). To display the
+official Powered by AWS logo, download it from
 the AWS co-marketing tools page using the Nevixs AWS account, save it unmodified as
-`public/powered-by-aws.svg` (or `.png`), and rebuild. The badge appears automatically
+`public/powered-by-aws.svg` (or `.png`), and rebuild. The badge and the required AWS
+trademark notice appear automatically
 once the file exists. Follow the [AWS Trademark Guidelines](https://aws.amazon.com/trademark-guidelines/).
 
 ## Express API placeholder
