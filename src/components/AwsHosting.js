@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export function AwsLogo({ className = "aws-logo" }) {
-  return <Image src="/powered-by-aws.png" alt="Powered by AWS" className={className} width={200} height={72} unoptimized />;
+  return <Image src="/powered-by-aws.png" alt="Powered by AWS" className={className} width={200} height={72} loading="eager" unoptimized />;
 }
 
 export function AwsStrip() {
