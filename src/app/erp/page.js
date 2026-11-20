@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { ArrowRight, Boxes, CreditCard, Users, ContactRound } from "lucide-react";
-import Reveal from "@/components/Reveal";
+import Image from "next/image";
+import { ArrowRight, ArrowUpRight, Boxes, Check, CreditCard, Users, ContactRound } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
 import WorkflowExplorer from "@/components/WorkflowExplorer";
 import ProductVideo from "@/components/ProductVideo";
 import AwsHosting from "@/components/AwsHosting";
+import { appUrl, supportEmail, whatsappUrl } from "@/lib/site";
+import { isTodo, todo, withoutTodos } from "@/lib/todo";
 
 export const metadata = pageMetadata({
   title: "Business OS: ERP, CRM, HR & Payroll Software",
@@ -13,19 +15,49 @@ export const metadata = pageMetadata({
   path: "/erp",
 });
 
-const productAreas = [
-  { id: "erp", icon: Boxes, label: "Operations & finance", title: "The moving parts. A shared picture.", description: "Enterprise resource planning brings inventory, purchasing, suppliers, production, and finance into the same workspace.", areas: ["Suppliers & purchasing", "Inventory & production", "Expenses & payments"], context: "For the teams coordinating materials, orders, and the everyday work of running a business." },
-  { id: "crm", icon: ContactRound, label: "Sales & customer relationships", title: "Keep the customer in the conversation.", description: "Connect customers, quotes, and invoices with the business work around them. Give sales conversations a place alongside operations.", areas: ["Customer relationships", "Quotes", "Invoices"], context: "For teams following a customer enquiry through to the commercial details." },
-  { id: "hr", icon: Users, label: "People & team workflows", title: "A business is the people behind it.", description: "Give human resources a dedicated area without isolating it from the rest of the business. Start with the people workflows that matter to your team.", areas: ["People management", "Everyday HR workflows", "Connection to payroll"], context: "For people teams looking to discuss their HR process in the context of the wider business." },
-  { id: "payroll", icon: CreditCard, label: "Payroll & people", title: "Bring pay into the bigger picture.", description: "Explore payroll alongside HR and finance, rather than as an entirely separate workspace. Talk through your pay cycle and requirements with our team.", areas: ["Dedicated payroll area", "HR & finance context", "Business-specific requirements"], context: "For HR and finance teams evaluating how payroll fits their operations. Confirm calculations, statutory coverage, and payout options in a demo." },
+const screenshots = [
+  { src: "/erp-overview-page.png", width: 1282, height: 816, alt: "Business OS overview dashboard showing sales, purchases, outstanding balances and stock valuation", caption: "Overview: sales, purchases, outstanding balances, and stock valuation in one view." },
+  { src: "/erp-frame-1.jpg", width: 1408, height: 792, alt: "Project page with seven delivery stages from scope approval to handover", caption: "Projects: delivery stages from scope and drawing approval to handover, each with a due date." },
+  { src: "/erp-frame-3.jpg", width: 1408, height: 792, alt: "Stage record showing start, work, first review, final review and complete steps", caption: "Approvals: each stage moves through a first and a final review before it is complete." },
+  { src: "/erp-frame-4.jpg", width: 1408, height: 792, alt: "Material planning and procurement stage with responsible person and reviewer", caption: "Next stage: material planning and procurement, with a responsible person and a reviewer." },
 ];
 
+const modules = [
+  {
+    id: "erp", icon: Boxes, tag: "ERP", title: "Operations & finance",
+    description: "Run purchasing, stock, production, and finance from one workspace. An order, the materials it needs, and the payment that follows stay connected, so teams work from the same records.",
+    features: ["Suppliers and purchase orders", "Inventory with stock levels and valuation", "Production job orders with due dates", "Project stages with two-person approvals", "Expenses and payments", "Supplier balances"],
+    screenshot: todo("ERP module screenshot"),
+  },
+  {
+    id: "crm", icon: ContactRound, tag: "CRM", title: "Sales & customers",
+    description: "Keep customers, quotations, and invoices together, so the commercial side of a job stays close to the work behind it. See what has been quoted, invoiced, and is still outstanding.",
+    features: ["Customer records", "Quotations", "Invoices", "Customer outstanding balances", "Net sales overview", todo("confirm feature: quote conversion tracking")],
+    screenshot: todo("CRM module screenshot"),
+  },
+  {
+    id: "hr", icon: Users, tag: "HR", title: "People & HR",
+    description: "Give your people workflows a dedicated area that connects to payroll and the rest of the business. Tell us about the HR processes your team handles today, and we will show how they fit.",
+    features: ["People management", "Everyday HR workflows", "Connection to payroll", todo("confirm feature: attendance tracking"), todo("confirm feature: leave management")],
+    screenshot: todo("HR module screenshot"),
+  },
+  {
+    id: "payroll", icon: CreditCard, tag: "Payroll", title: "Payroll",
+    description: "Handle payroll alongside HR and finance instead of in a separate tool. Confirm the calculations, statutory requirements, and payment process you need during a demo.",
+    features: ["Dedicated payroll area", "Approved salary tracking with outstanding amounts", "Linked to people records in HR", "Payroll in the wider finance picture", todo("confirm feature: statutory deductions such as PF, ESI, PT and TDS")],
+    screenshot: todo("Payroll module screenshot"),
+  },
+];
+
+const audience = todo("confirm target industries and company size for the Who it's for section");
+
 const questions = [
-  { question: "Can I see the actual product before deciding?", answer: "Yes. Open Business OS to access the app, or request a demo and tell us which workflows you want to explore. The workflow diagrams on this page are explanatory guides, not screenshots." },
-  { question: "Does the payroll module cover our statutory requirements?", answer: "Requirements vary by location and business. Share the calculations, filings, and payment process you need so we can confirm current coverage. This page does not promise automatic statutory compliance or direct bank payouts." },
+  { question: "Where is my data hosted?", answer: "Business OS runs on Amazon Web Services (AWS) in the Asia Pacific (Mumbai) Region. Ask our team if you need more detail about how your data is stored, backed up, and who can access it." },
+  { question: "How do I get started?", answer: "Open the app to sign in or create an account, or request a demo and tell us which workflows you want to see. We will walk through the modules that matter to your business." },
+  { question: "Can I see the actual product before deciding?", answer: "Yes. The screenshots and video on this page come from Business OS with sample data. In a demo, we can show the workflows your team cares about." },
   { question: "What about existing data and integrations?", answer: "Tell us what systems you use, what data you need to bring across, and where work moves between tools. We can discuss the scope before you decide; an integration or migration is not assumed to be included." },
-  { question: "Where is Business OS hosted?", answer: "Business OS runs on Amazon Web Services (AWS) in the Asia Pacific (Mumbai) Region. Ask our team if you need more detail about how your data is stored and who can access it." },
-  { question: "Where can I get pricing and setup details?", answer: "Send a Business OS enquiry with your team size, modules of interest, and main workflows. Ask our team about pricing, setup, and support for your requirements." },
+  { question: "Does the payroll module cover our statutory requirements?", answer: "Requirements vary by location and business. Share the calculations, filings, and payment process you need so we can confirm current coverage. This page does not promise automatic statutory compliance or direct bank payouts." },
+  { question: "How do I get support?", answer: `Email our team at ${supportEmail} or message us on WhatsApp. Tell us your company name and what you need help with.` },
 ];
 
 export default function ErpPage() {
@@ -41,6 +73,7 @@ export default function ErpPage() {
       operatingSystem: "Web browser",
       description: "Integrated ERP, CRM, HR management, and payroll software for connected business operations.",
       featureList: ["Enterprise resource planning (ERP)", "Customer relationship management (CRM)", "Human resources management (HR)", "Payroll management", "Inventory and production", "Purchasing and finance"],
+      screenshot: screenshots.map(({ src }) => `https://nevixs.com${src}`),
       publisher: { "@id": "https://nevixs.com/#organization" },
     }) }} />
     <section className="page-hero business-hero">
@@ -48,40 +81,58 @@ export default function ErpPage() {
         <h1>NEVIXS Business OS</h1>
         <p>ERP, CRM, HR, and payroll in one workspace.</p>
         <div className="product-actions">
-          <Link href="/contact?topic=erp" className="button button-dark">Request a workflow demo <ArrowRight size={15} /></Link>
-          <a href="https://app.nevixs.com" className="button button-outline">Open Business OS <ArrowRight size={15} /></a>
+          <Link href="/contact?topic=erp" className="button">Request a demo <ArrowRight size={15} aria-hidden="true" /></Link>
+          <a href={appUrl} className="button button-outline">Open Business OS <ArrowUpRight size={15} aria-hidden="true" /></a>
         </div>
       </div>
     </section>
-    <nav className="container product-jump-links" aria-label="Explore Business OS"><a href="#walkthrough">Walkthrough</a><a href="#erp">ERP</a><a href="#crm">CRM</a><a href="#hr">HR</a><a href="#payroll">Payroll</a><a href="#workflows">Workflows</a><a href="#getting-started">Getting started</a><a href="#infrastructure">Infrastructure</a><a href="#product-questions">FAQs</a></nav>
-    <section className="section product-walkthrough" id="walkthrough">
+    <nav className="container product-jump-links" aria-label="Explore Business OS"><a href="#screens">Screenshots</a><a href="#erp">ERP</a><a href="#crm">CRM</a><a href="#hr">HR</a><a href="#payroll">Payroll</a><a href="#workflows">Workflows</a><a href="#getting-started">Getting started</a><a href="#infrastructure">Infrastructure</a><a href="#product-questions">FAQs</a></nav>
+
+    <section className="section product-walkthrough" id="screens" aria-labelledby="screens-heading">
       <div className="container">
         <div className="section-heading walkthrough-heading">
-          <h2 className="section-title">See a project move through approvals</h2>
+          <h2 className="section-title" id="screens-heading">See Business OS in use</h2>
           <p className="body-copy">Follow a sample fabrication project from scope and drawing approval through procurement, production, inspection, dispatch, and handover.</p>
         </div>
         <ProductVideo />
+        <div className="screen-gallery">
+          {screenshots.map(({ src, width, height, alt, caption }) => (
+            <figure className="screen-card" key={src}>
+              <Image src={src} alt={alt} width={width} height={height} unoptimized />
+              <figcaption>{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="screens-note">Screenshots use sample data.</p>
       </div>
     </section>
-    <section className="section">
+
+    <section className="section module-section" aria-labelledby="modules-heading">
       <div className="container">
-        <Reveal className="section-heading">
-          <h2 className="section-title">Business OS modules</h2>
-        </Reveal>
+        <h2 className="section-title" id="modules-heading">Four modules, one workspace</h2>
         <div className="module-stories">
-          {productAreas.map(({ id, icon: Icon, label, title, description, areas, context }, index) => (
-            <article className="module-story" id={id} key={id}>
-              <div className="module-story-copy"><span className="eyebrow"><Icon size={20} aria-hidden="true" />{id.toUpperCase()} / {label}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
+          {modules.map(({ id, icon: Icon, tag, title, description, features, screenshot }) => (
+            <article className="module-story" id={id} key={id} aria-labelledby={`${id}-heading`}>
+              <div className="module-story-copy">
+                <span className="eyebrow"><Icon size={20} aria-hidden="true" />{tag}</span>
+                <h3 id={`${id}-heading`}>{title}</h3>
+                <p>{description}</p>
+                <Link className="text-action" href="/contact?topic=erp">Ask about {tag} <ArrowRight size={16} aria-hidden="true" /></Link>
               </div>
-              <div className="module-outline"><span className="module-outline-number">0{index + 1} / WORKSPACE FOCUS</span><ul>{areas.map(area => <li key={area}><Icon size={18} aria-hidden="true" />{area}</li>)}</ul><p>{context}</p></div>
+              <div className="module-outline">
+                <ul aria-label={`${tag} features`}>{withoutTodos(features).map((feature) => <li key={feature}><Check size={16} aria-hidden="true" />{feature}</li>)}</ul>
+                {!isTodo(screenshot) && screenshot}
+              </div>
             </article>
           ))}
         </div>
       </div>
     </section>
+
+    {!isTodo(audience) && <section className="section" id="who-its-for">{audience}</section>}
+
     <WorkflowExplorer />
+
     <section className="section approach-section" id="getting-started">
       <div className="container">
         <div className="section-heading"><h2 className="section-title">What to expect from a demo</h2></div>
@@ -92,18 +143,18 @@ export default function ErpPage() {
         </ol>
       </div>
     </section>
+
     <AwsHosting />
+
     <section className="section product-faq" id="product-questions"><div className="container faq-layout"><div><span className="eyebrow">Know before you choose</span><h2 className="section-title">Good questions.<br />Clear expectations.</h2><p className="body-copy">Your requirements deserve a specific answer, not a broad promise.</p></div><div className="faq-list">{questions.map(({ question, answer }) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
-    <section className="section">
-      <div className="container two-col">
-        <Reveal>
-          <span className="eyebrow">Start a conversation</span>
-          <h2 className="section-title">Let&apos;s follow your work.</h2>
-        </Reveal>
-        <Reveal delay={.1}>
-          <p className="body-copy">Open the app to sign in or create an account. For questions about getting started or fitting Business OS into your workflows, talk to our team.</p>
-          <Link href="/contact?topic=erp" className="button button-dark">Discuss your business <ArrowRight size={15} /></Link>
-        </Reveal>
+
+    <section className="section next-step">
+      <div className="container">
+        <h2>See Business OS with your own workflows.</h2>
+        <div className="product-actions product-actions-center">
+          <Link href="/contact?topic=erp" className="button">Request a demo <ArrowRight size={15} aria-hidden="true" /></Link>
+          <a href={whatsappUrl} className="button button-outline" target="_blank" rel="noopener noreferrer">Chat on WhatsApp <ArrowUpRight size={15} aria-hidden="true" /></a>
+        </div>
       </div>
     </section>
   </>;
