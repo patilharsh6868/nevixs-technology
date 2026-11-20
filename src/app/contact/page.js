@@ -1,5 +1,6 @@
 import { MapPin, Mail, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import TrustBar from "@/components/TrustBar";
 import { whatsappNumber, whatsappUrl } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
@@ -18,6 +19,7 @@ export default function ContactPage() {
         <div className="contact-intro">
           <h1>Contact Nevixs</h1>
           <p className="body-copy">Request a Business OS demo or tell us what you want to build.</p>
+          <TrustBar />
         </div>
         <ContactForm />
         <aside className="contact-info" aria-label="Other ways to contact us">

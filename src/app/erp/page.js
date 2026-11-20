@@ -6,6 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 import WorkflowExplorer from "@/components/WorkflowExplorer";
 import ProductVideo from "@/components/ProductVideo";
 import AwsHosting from "@/components/AwsHosting";
+import TrustBar from "@/components/TrustBar";
 import { appUrl, supportEmail, whatsappUrl } from "@/lib/site";
 import { isTodo, todo, withoutTodos } from "@/lib/todo";
 
@@ -84,6 +85,7 @@ export default function ErpPage() {
           <Link href="/contact?topic=erp" className="button">Request a demo <ArrowRight size={15} aria-hidden="true" /></Link>
           <a href={appUrl} className="button button-outline">Open Business OS <ArrowUpRight size={15} aria-hidden="true" /></a>
         </div>
+        <TrustBar />
       </div>
     </section>
     <nav className="container product-jump-links" aria-label="Explore Business OS"><a href="#screens">Screenshots</a><a href="#erp">ERP</a><a href="#crm">CRM</a><a href="#hr">HR</a><a href="#payroll">Payroll</a><a href="#workflows">Workflows</a><a href="#getting-started">Getting started</a><a href="#infrastructure">Infrastructure</a><a href="#product-questions">FAQs</a></nav>
