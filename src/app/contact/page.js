@@ -1,6 +1,6 @@
 import { MapPin, Mail, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-import { whatsappNumber, whatsappUrl } from "@/components/WhatsAppButton";
+import { whatsappNumber, whatsappUrl } from "@/lib/site";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { pageMetadata } from "@/lib/metadata";
 

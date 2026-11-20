@@ -12,7 +12,7 @@ export async function onRequestPost(context) {
   const { name, email, message, company, interest = "general" } = body || {};
   const interests = {
     general: "General enquiry",
-    erp: "Upcoming Nevixs ERP",
+    erp: "NEVIXS Business OS",
     "custom-software": "Custom software",
   };
 

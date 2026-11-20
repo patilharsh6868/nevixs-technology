@@ -5,11 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Logo from "@/components/Logo";
+import { appUrl } from "@/lib/site";
 
 const links = [
   ["Business OS", "/erp"],
   ["Services", "/services"],
-  ["Studio", "/about"],
+  ["About", "/about"],
   ["Insights", "/blog"],
   ["Contact", "/contact"],
 ];
@@ -40,9 +41,10 @@ export default function Navbar() {
           {links.map(([label, href]) => (
             <Link key={href} className={pathname === href ? "active" : ""} aria-current={pathname === href ? "page" : undefined} href={href} onClick={() => setMenuOpen(false)}>{label}</Link>
           ))}
+          <a className="nav-app-link" href={appUrl}>Open app <ArrowUpRight size={15} aria-hidden="true" /></a>
         </nav>
         <div className="nav-actions">
-          <a className="button button-dark nav-cta" href="https://app.nevixs.com">Open app <ArrowUpRight size={15} /></a>
+          <a className="button button-dark nav-cta" href={appUrl}>Open app <ArrowUpRight size={15} /></a>
           <button id="navigation-toggle" className="menu-toggle" type="button" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="main-navigation">
             {menuOpen ? <X size={19} /> : <Menu size={19} />}
           </button>

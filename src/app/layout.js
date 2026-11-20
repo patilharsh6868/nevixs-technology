@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CursorSparkles from "@/components/CursorSparkles";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { instagramUrl } from "@/lib/site";
 
 export const metadata = {
   metadataBase: new URL("https://nevixs.com"),
@@ -52,7 +53,7 @@ export default function RootLayout({ children }) {
                 url: "https://nevixs.com",
                 logo: "https://nevixs.com/nevixs-mark.svg",
                 email: "support@nevixs.com",
-                sameAs: ["https://www.instagram.com/nevixstechnologies/"],
+                sameAs: [instagramUrl],
                 address: { "@type": "PostalAddress", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
               },
               {
